@@ -1,0 +1,101 @@
+$yellow-base: #ff9f0d;
+$gray-base: #4f4f4f;
+$dark-gray: #0d0d0d;
+
+section {
+  font-family: sans-serif, Helvetica;
+  margin: 0 55px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  .bg-img {
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    opacity: 0.07;
+    z-index: -1;
+  }
+}
+
+.main-img {
+  img {
+    width: 95%;
+    height: 90%;
+  }
+}
+
+.calligraphy {
+  font-family: "Great Vibes", cursive;
+  font-size: 32px;
+  line-height: 40px;
+  color: $yellow-base;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 80%;
+  align-items: center;
+  gap: 50px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  img {
+    width: 15px;
+    height: 15px;
+  }
+  hr {
+    height: 100%;
+    width: 0.5px;
+    border: 1px solid white;
+    background: white;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .small-text {
+    width: 55%;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .header-text {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 68px;
+  }
+}
+
+.yellow {
+  color: $yellow-base;
+}
+
+.see-menu {
+  background: $yellow-base;
+  border-radius: 30px;
+  padding: 17px;
+  width: 25%;
+  color: white;
+  border: none;
+
+  &:hover {
+    opacity: 0.9;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px $dark-gray;
+  }
+}
