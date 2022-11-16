@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+$dark-gray: #0d0d0d;
+
+body {
+  background: $dark-gray;
+  color: white;
+  margin: 0;
+  padding: 0;
+}

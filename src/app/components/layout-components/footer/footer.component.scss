@@ -1,0 +1,195 @@
+$yellow-base: #ff9f0d;
+$gray-base: #4f4f4f;
+
+footer {
+  font-family: sans-serif, "Inter";
+
+  hr {
+    border: 0.5px solid $yellow-base;
+    width: 80%;
+    opacity: 0.9;
+  }
+
+  .yellow {
+    color: $yellow-base;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:visited {
+      color: white;
+    }
+  }
+}
+
+.footer-top {
+  margin: 35px 10% 50px 10%;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.support {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  .largeText {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0;
+  }
+
+  .smallText {
+    height: 24px;
+  }
+}
+
+.sendEmail {
+  display: flex;
+  width: 30%;
+  height: 38px;
+
+  input {
+    width: 65%;
+    border: none;
+    background: $yellow-base;
+    padding: 10px;
+    border-radius: 3px 0 0 3px;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: white;
+    }
+  }
+
+  button {
+    width: 35%;
+    border: none;
+    color: $yellow-base;
+    background: white;
+    border-radius: 0 3px 3px 0;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.9;
+    }
+  }
+}
+
+.footer-icon-clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  background: $yellow-base;
+  border-radius: 2px;
+}
+
+.aboutUs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.work-hours {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  .work-hours-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+.footer-about {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header-text {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.footer-mid {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  margin: 50px 10% 50px 10%;
+  gap: 50px;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .post {
+    display: flex;
+    gap: 20px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      .opac {
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+.footer-bottom {
+  background: $gray-base;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    margin: 10%;
+  }
+}
+
+.social {
+  display: flex;
+  gap: 15px;
+  margin: 10%;
+
+  .socialMedia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    width: 30px;
+    height: 30px;
+    img {
+      width: 8px;
+      height: 12px;
+      border-radius: 1px;
+    }
+    .icon {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}

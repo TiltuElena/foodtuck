@@ -1,0 +1,96 @@
+$green-base: rgba(25, 90, 0, 1);
+$yellow-base: #ff9f0d;
+$dark-gray: #0d0d0d;
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.logo {
+  font-family: "Helvetica", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  cursor: pointer;
+
+  .yellow {
+    color: $yellow-base;
+  }
+}
+
+.nav-links {
+  display: flex;
+  width: 40%;
+  justify-content: center;
+  gap: 20%;
+
+  .link {
+    padding: 8px;
+    cursor: pointer;
+    &:hover {
+      color: $yellow-base;
+    }
+  }
+}
+
+.link--active {
+  font-weight: bold;
+  color: $yellow-base;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 35px 10%;
+}
+
+.nav-right {
+  display: flex;
+  gap: 20px;
+
+  #searchBar {
+    position: relative;
+    display: flex;
+    min-width: 50px;
+
+    input {
+      border: 1px solid $yellow-base;
+      border-radius: 27px;
+      background: $dark-gray;
+      box-sizing: border-box;
+      width: 100%;
+      height: 35px;
+      padding-left: 10px;
+      color: white;
+      padding-right: 40px;
+
+      &::placeholder {
+        color: white;
+      }
+    }
+
+    img {
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      top: 9px;
+      right: 13px;
+      cursor: pointer;
+    }
+  }
+  .nav-icons {
+    display: flex;
+    width: 70px;
+    gap: 20px;
+    justify-self: end;
+
+    .navIcon {
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
