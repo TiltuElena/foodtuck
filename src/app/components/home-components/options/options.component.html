@@ -1,0 +1,10 @@
+<section>
+  <div><img src="assets/images/bg2.png" alt="food" id="bg-img"></div>
+  <div class="options">
+    <div class="option" *ngFor="let option of options">
+      <img [src]="option.imageUrl" alt="OptionIcon" class="option-icon">
+      <span class="option-text">{{option.text}}</span>
+      <span class="option-nr">{{option.nr}}</span>
+    </div>
+  </div>
+</section>

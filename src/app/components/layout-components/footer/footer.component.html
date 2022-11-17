@@ -37,43 +37,23 @@
     </div>
     <div class="list">
       <span class="header-text">Useful Links</span>
-      <a href="#">About</a>
-      <a href="#">News</a>
-      <a href="#">Partners</a>
-      <a href="#">Team</a>
-      <a href="#">Menu</a>
-      <a href="#">Contacts</a>
+      <a href="#" *ngFor="let optionLink1 of optionLinks1">{{
+        optionLink1.text
+      }}</a>
     </div>
     <div class="list">
       <span class="header-text">Help?</span>
-      <a href="#">FAQ</a>
-      <a href="#">Term & conditions</a>
-      <a href="#">Reporting</a>
-      <a href="#">Documentation</a>
-      <a href="#">Support Policy</a>
-      <a href="#">Privacy</a>
+      <a href="#" *ngFor="let optionLink2 of optionLinks2">{{
+        optionLink2.text
+      }}</a>
     </div>
     <div class="posts">
       <span class="header-text">Recent posts</span>
-      <div class="post">
-        <img src="assets/images/footerImg1.png" alt="food" />
+      <div class="post" *ngFor="let post of posts">
+        <img [src]="post.imgUrl" alt="food" />
         <div>
-          <span class="opac">20 Feb 2022</span>
-          <span>Keep Your Business </span>
-        </div>
-      </div>
-      <div class="post">
-        <img src="assets/images/footerImg2.png" alt="food" />
-        <div>
-          <span class="opac">20 Feb 2022</span>
-          <span>Keep Your Business </span>
-        </div>
-      </div>
-      <div class="post">
-        <img src="assets/images/footerImg3.png" alt="food" />
-        <div>
-          <span class="opac">20 Feb 2022</span>
-          <span>Keep Your Business </span>
+          <span class="opac">{{ post.date }}</span>
+          <span>{{ post.text }}</span>
         </div>
       </div>
     </div>
@@ -81,20 +61,8 @@
   <div class="footer-bottom">
     <span>Copyright © 2022 by Elena. All Rights Reserved.</span>
     <div class="social">
-      <a href="#" class="socialMedia">
-        <img src="assets/icons/footerFacebook.png" alt="facebook" />
-      </a>
-      <a href="#" class="socialMedia">
-        <img src="assets/icons/footerTwitter.png" alt="twitter" class="icon" />
-      </a>
-      <a href="#" class="socialMedia">
-        <img src="assets/icons/footerInstagram.png" alt="instagram" class="icon" />
-      </a>
-      <a href="#" class="socialMedia">
-        <img src="assets/icons/footerYouTube.png" alt="youtube" class="icon" />
-      </a>
-      <a href="#" class="socialMedia">
-        <img src="assets/icons/footerPinterest.png" alt="pinterest" class="icon" />
+      <a href="#" class="socialMedia" *ngFor="let socialMedia of socialMedias">
+        <img [src]="socialMedia.imgUrl" alt="social-media" class="icon" />
       </a>
     </div>
   </div>

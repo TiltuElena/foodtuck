@@ -7,11 +7,11 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   font-family: sans-serif, Halvetica;
-  margin: 100px 10% 0 10%;
+  margin: 210px 10% 50px 10%;
 
   .calligraphy {
     font-family: "Great Vibes", cursive;
-    font-size: 32px;
+    font-size: 2.5vw;
     line-height: 40px;
     color: $yellow-base;
   }
@@ -26,12 +26,12 @@ section {
   gap: 25px;
 
   .header-text {
-    font-size: 48px;
+    font-size: 3.5vw;
     font-weight: 700;
     line-height: 56px;
   }
   .text {
-    font-size: 16px;
+    font-size: 1.1vw;
     font-weight: 400;
     line-height: 24px;
   }
@@ -60,6 +60,8 @@ section {
   padding: 15px;
   width: 22%;
   color: white;
+  font-size: 1vw;
+  min-width: 70px;
 
   &:hover {
     opacity: 0.9;
@@ -75,7 +77,7 @@ section {
   align-self: center;
 
   img {
-    width: 500px;
+    width: 32vw;
   }
 
   div {
@@ -83,7 +85,7 @@ section {
     gap: 15px;
 
     img {
-      width: 240px;
+      width: 15.5vw;
     }
   }
 }

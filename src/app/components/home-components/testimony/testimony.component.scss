@@ -1,0 +1,82 @@
+$yellow-base: #ff9f0d;
+$gray: #4F4F4F;
+
+section{
+  font-family: sans-serif, Helvetica;
+  margin: 100px 10% 0 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  .yellow{
+    color: $yellow-base;
+  }
+
+  .calligraphy{
+    font-family: "Great Vibes", cursive;
+    font-size: 32px;
+    line-height: 40px;
+    color: $yellow-base;
+  }
+
+  .header-text{
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 56px;
+  }
+}
+
+.review{
+  background: white;
+  color: $gray;
+  position: relative;
+  padding: 70px 50px 30px 50px;
+  width: 50%;
+}
+
+.decoration{
+  display: flex;
+  justify-content: center;
+}
+
+#userImg{
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: -35px;
+  left: 43.5%;
+}
+
+#quote{
+  padding-bottom: 30px;
+}
+
+.paragraph-text{
+  text-align: center;
+  line-height: 25px;
+}
+
+.user-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.bold-text{
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  color: #0d0d0d;
+}
+.stars{
+  margin-top: 20px;
+}
+#bg-decoration{
+  position: absolute;
+  top: -45px;
+  right: -150px;
+  width: 30vw;
+  height: 34vw;
+}

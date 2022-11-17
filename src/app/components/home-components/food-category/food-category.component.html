@@ -1,0 +1,15 @@
+<section>
+  <div class="text">
+    <span class="calligraphy"> Food Category</span>
+    <div class="header-text">
+      <span class="yellow">Cho</span><span>ose Food Item</span>
+    </div>
+  </div>
+  <div class="images-category" >
+    <div class="special-discount" *ngFor="let food of foods">
+      <figure><img [src]="food.imgUrl" alt="food" /></figure>
+<!--      <span class="discount">Save 30%</span>-->
+<!--      <span class="discount-add">Fast Food Dish</span>-->
+    </div>
+  </div>
+</section>

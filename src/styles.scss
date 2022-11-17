@@ -1,9 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 $dark-gray: #0d0d0d;
+$yellow-base: #ff9f0d;
+$gray-base: #4f4f4f;
+$green-base: rgba(25, 90, 0, 1);
 
 body {
   background: $dark-gray;
   color: white;
   margin: 0;
   padding: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $gray-base;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
 }
