@@ -33,6 +33,7 @@ section{
   position: relative;
   padding: 70px 50px 30px 50px;
   width: 50%;
+  box-shadow: 5px 5px 10px #4F4F4F;
 }
 
 .decoration{
@@ -70,9 +71,11 @@ section{
   line-height: 32px;
   color: #0d0d0d;
 }
+
 .stars{
   margin-top: 20px;
 }
+
 #bg-decoration{
   position: absolute;
   top: -45px;

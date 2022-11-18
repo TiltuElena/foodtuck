@@ -1,1 +1,24 @@
-<p>login works!</p>
+<section>
+  <div><img src="assets/images/bg3n.png" alt="bgImg" id="bg-img"></div>
+  <div class="container">
+    <div class="header-text">Sign Up</div>
+    <form (submit)="login()">
+      <div class="formField" *ngFor="let formField of formFields">
+        <img [src]="formField.iconUrl" alt="icon" class="formIcon" />
+        <input
+          [type]="formField.type"
+          [placeholder]="formField.placeholder"
+          class="formInput"
+        />
+      </div>
+      <div class="formBottom">
+      <div class="check">
+        <input type="checkbox" id="remember" />
+        <label > Remember me?</label>
+      </div>
+      <button>Sign Up</button>
+      <div class="forget" [routerLink]="forgotPasswordUrl">Forget password?</div>
+      </div>
+    </form>
+  </div>
+</section>

@@ -66,6 +66,11 @@ $dark-gray: #0d0d0d;
       color: white;
       padding-right: 40px;
 
+      &:focus {
+        outline: #ff9f0d;
+        opacity: 0.9;
+      }
+
       &::placeholder {
         color: white;
       }

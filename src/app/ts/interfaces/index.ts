@@ -11,3 +11,5 @@ export { SocialInterface } from './social';
 export { PostsInterface } from './posts';
 
 export { LinkOptionInterface } from './link-option';
+
+export { FormFieldsInterface } from './form-fields';

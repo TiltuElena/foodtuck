@@ -1,0 +1,23 @@
+<section>
+  <div class="bg-decoration">
+    <div><img src="assets/images/bg5.png" alt="bg-img" class="bg-img" /></div>
+  </div>
+  <div class="container">
+  <div class="text">
+    <div class="header-text"><span class="yellow">Te</span>am Members</div>
+    <div class="paragraph-text">
+      <span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
+      <span> Varius sed pharetra dictum neque massa conguev</span>
+    </div>
+  </div>
+  <div class="team-members">
+    <div class="team-member" *ngFor="let teamMember of teamMembers">
+      <figure class="team-member-img"><img [src]="teamMember.imageUrl" alt="chef" /></figure>
+      <div class="member-info">
+        <span class="bold-text">{{ teamMember.text }}</span>
+        <span>{{ teamMember.nr }}</span>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>

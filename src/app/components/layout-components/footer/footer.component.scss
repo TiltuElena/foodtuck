@@ -62,6 +62,11 @@ footer {
     border-radius: 3px 0 0 3px;
     box-sizing: border-box;
 
+    &:focus {
+      outline: none;
+      opacity: 0.9;
+    }
+
     &::placeholder {
       color: white;
     }
@@ -129,7 +134,7 @@ footer {
   flex-direction: column;
   gap: 25px;
 
-  a:hover{
+  a:hover {
     color: $yellow-base;
   }
 }
@@ -159,7 +164,7 @@ footer {
         opacity: 0.9;
       }
     }
-    img{
+    img {
       width: 3.7vw;
       height: 3.7vw;
     }
@@ -191,8 +196,8 @@ footer {
     width: 30px;
     height: 30px;
 
-    &:hover{
-      box-shadow: 2px 2px #888888 ;
+    &:hover {
+      box-shadow: 2px 2px #888888;
     }
 
     img {
