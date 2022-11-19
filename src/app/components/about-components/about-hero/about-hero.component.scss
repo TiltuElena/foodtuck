@@ -1,0 +1,98 @@
+@use "src/styles";
+@import url("https://fonts.cdnfonts.com/css/miniver");
+
+section {
+  margin: 120px 10%;
+  font-family: sans-serif, Halvetica;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+}
+
+button {
+  padding: 15px 30px;
+  color: white;
+  background: styles.$yellow-base;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 30%;
+  font-size: 18px;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.about {
+  font-family: Miniver, sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-item {
+  display: flex;
+  width: 130px;
+  align-items: end;
+  color: styles.$yellow-base;
+}
+
+hr {
+  border: 0.5px solid styles.$yellow-base;
+  background: styles.$yellow-base;
+  height: 0;
+  width: 40px;
+}
+
+.text-header {
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 56px;
+  display: flex;
+  flex-direction: column;
+}
+
+.paragraph-text {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.about-img {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+#img1 {
+  width: 17vw;
+  height: 25vw;
+}
+
+#img2 {
+  margin-top: 70px;
+  width: 13vw;
+  height: 14vw;
+}
+
+#img3 {
+  width: 13vw;
+  height: 16vw;
+}

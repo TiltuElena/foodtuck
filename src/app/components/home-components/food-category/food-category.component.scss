@@ -1,5 +1,4 @@
-$yellow-base: #ff9f0d;
-$dark-gray: #0d0d0d;
+@use 'src/styles';
 
 section {
   font-family: Helvetica, sans-serif;
@@ -22,7 +21,7 @@ figure {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: $dark-gray;
+  background: styles.$dark-gray;
   overflow: hidden;
 
   & img {
@@ -54,7 +53,7 @@ figure {
     font-family: "Great Vibes", cursive;
     font-size: 32px;
     line-height: 40px;
-    color: $yellow-base;
+    color: styles.$yellow-base;
   }
 
   .header-text {
@@ -64,7 +63,7 @@ figure {
   }
 
   .yellow {
-    color: $yellow-base;
+    color: styles.$yellow-base;
   }
 }
 
@@ -74,7 +73,7 @@ figure {
 
   .discount {
     background: white;
-    color: $yellow-base;
+    color: styles.$yellow-base;
     border-radius: 3px;
     padding: 7px 15px;
     font-weight: bold;
@@ -85,7 +84,7 @@ figure {
   }
 
   .discount-add {
-    background: $yellow-base;
+    background: styles.$yellow-base;
     color: white;
     padding: 9px 20px;
     border-radius: 3px;

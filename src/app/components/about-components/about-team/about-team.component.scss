@@ -1,3 +1,5 @@
+@use 'src/styles';
+
 section {
   width: 100%;
   font-family: sans-serif, Helvetica;
@@ -14,7 +16,7 @@ section {
   }
 
   .yellow{
-    color: #ff9f0d;
+    color: styles.$yellow-base;
   }
 
   .bold-text{
@@ -44,7 +46,7 @@ figure {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #4F4F4F;
+  background: styles.$gray-base;
   overflow: hidden;
 
   & img {
@@ -101,7 +103,7 @@ figure {
     background: white;
     position: relative;
     bottom: 5px;
-    color: #0d0d0d;
+    color: styles.$dark-gray;
   }
 }
 

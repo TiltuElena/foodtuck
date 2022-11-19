@@ -1,17 +1,17 @@
-$yellow-base: #ff9f0d;
-$gray-base: #4f4f4f;
+@use 'src/styles';
 
 footer {
   font-family: sans-serif, "Inter";
   margin-top: 100px;
+
   hr {
-    border: 0.5px solid $yellow-base;
+    border: 0.5px solid styles.$yellow-base;
     width: 80%;
     opacity: 0.9;
   }
 
   .yellow {
-    color: $yellow-base;
+    color: styles.$yellow-base;
   }
 
   a {
@@ -57,7 +57,7 @@ footer {
   input {
     width: 65%;
     border: none;
-    background: $yellow-base;
+    background: styles.$yellow-base;
     padding: 10px;
     border-radius: 3px 0 0 3px;
     box-sizing: border-box;
@@ -75,7 +75,7 @@ footer {
   button {
     width: 35%;
     border: none;
-    color: $yellow-base;
+    color: styles.$yellow-base;
     background: white;
     border-radius: 0 3px 3px 0;
 
@@ -92,7 +92,7 @@ footer {
   justify-content: center;
   width: 65px;
   height: 65px;
-  background: $yellow-base;
+  background: styles.$yellow-base;
   border-radius: 2px;
 }
 
@@ -135,7 +135,7 @@ footer {
   gap: 25px;
 
   a:hover {
-    color: $yellow-base;
+    color: styles.$yellow-base;
   }
 }
 
@@ -172,7 +172,7 @@ footer {
 }
 
 .footer-bottom {
-  background: $gray-base;
+  background: styles.$gray-base;
   height: 100px;
   display: flex;
   justify-content: space-between;
@@ -192,17 +192,17 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: white;
+    background: gray;
     width: 30px;
     height: 30px;
-
+    box-shadow: 2px 2px 10px #222;
     &:hover {
-      box-shadow: 2px 2px #888888;
+      box-shadow: 2px 2px 10px #888888;
     }
 
     img {
-      width: 0.2vw;
-      height: 0.5vw;
+      width: 1vw;
+      height: 1vw;
       border-radius: 1px;
     }
 

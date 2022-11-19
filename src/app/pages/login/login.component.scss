@@ -1,3 +1,5 @@
+@use 'src/styles';
+
 section {
   font-family: sans-serif, Halvetica;
   display: flex;
@@ -24,7 +26,7 @@ section {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: #4f4f4f;
+  background: styles.$gray-base;
   padding: 25px;
   box-shadow: #0d0d0d 3px 1px 20px 10px ;
 }
@@ -57,12 +59,12 @@ section {
     box-sizing: border-box;
     width: 100%;
     font-size: 17px;
-    color: #0d0d0d;
+    color: styles.$dark-gray;
     pointer-events: auto;
 
     &::placeholder {
       font-size: 17px;
-      color: #0d0d0d;
+      color: styles.$dark-gray;
     }
 
     &:focus {
@@ -73,14 +75,14 @@ section {
 }
 
 input[type="checkbox"] {
-  accent-color: #ff9f0d;
+  accent-color: styles.$yellow-base;
   height: 16px;
   width: 16px;
 }
 
 button {
   margin-top: 10px;
-  background: #ff9f0d;
+  background: styles.$yellow-base;
   padding: 15px 40px;
   font-size: 17px;
   border: none;
@@ -94,6 +96,11 @@ button {
 
 .forget {
   text-align: right;
+
+  &:hover{
+    cursor: pointer;
+    color: styles.$yellow-base;
+  }
 }
 
 .formBottom {

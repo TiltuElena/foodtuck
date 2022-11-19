@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PageRoutes} from "../../../ts/enum";
 
 @Component({
   selector: 'app-about',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
+
+  aboutLink = PageRoutes.About;
 
   constructor() { }
 

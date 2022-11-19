@@ -13,3 +13,5 @@ export { PostsInterface } from './posts';
 export { LinkOptionInterface } from './link-option';
 
 export { FormFieldsInterface } from './form-fields';
+
+export { MenuItemInterface } from './menu-item';

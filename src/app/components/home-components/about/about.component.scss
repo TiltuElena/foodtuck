@@ -1,7 +1,4 @@
-$yellow-base: #ff9f0d;
-$gray-base: #4f4f4f;
-$green-base: rgba(25, 90, 0, 1);
-$dark-gray: #0d0d0d;
+@use 'src/styles';
 
 section {
   display: grid;
@@ -13,10 +10,10 @@ section {
     font-family: "Great Vibes", cursive;
     font-size: 2.5vw;
     line-height: 40px;
-    color: $yellow-base;
+    color: styles.$yellow-base;
   }
   .yellow {
-    color: $yellow-base;
+    color: styles.$yellow-base;
   }
 }
 
@@ -55,7 +52,7 @@ section {
 
 .menu-button {
   border: none;
-  background: $yellow-base;
+  background: styles.$yellow-base;
   border-radius: 30px;
   padding: 15px;
   width: 22%;

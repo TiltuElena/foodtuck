@@ -1,6 +1,4 @@
-$yellow-base: #ff9f0d;
-$gray-base: #4f4f4f;
-$dark-gray: #0d0d0d;
+@use "src/styles";
 
 section {
   font-family: sans-serif, Helvetica;
@@ -32,7 +30,7 @@ section {
   font-family: "Great Vibes", cursive;
   font-size: 2vw;
   line-height: 40px;
-  color: $yellow-base;
+  color: styles.$yellow-base;
 }
 
 .social {
@@ -50,9 +48,10 @@ section {
   }
 
   img {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
   }
+
   hr {
     height: 100%;
     width: 0.5px;
@@ -82,11 +81,11 @@ section {
 }
 
 .yellow {
-  color: $yellow-base;
+  color: styles.$yellow-base;
 }
 
 .see-menu {
-  background: $yellow-base;
+  background: styles.$yellow-base;
   border-radius: 30px;
   padding: 17px;
   width: 25%;
@@ -98,6 +97,6 @@ section {
   &:hover {
     opacity: 0.9;
     cursor: pointer;
-    box-shadow: 5px 5px 5px $dark-gray;
+    box-shadow: 5px 5px 5px styles.$dark-gray;
   }
 }

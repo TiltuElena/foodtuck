@@ -17,7 +17,7 @@ export class AboutTeamComponent implements OnInit {
     {
       id: 2,
       imageUrl: 'assets/images/chef2.png',
-      text: 'Ataur Rahman',
+      text: 'Marau Amarel',
       nr: 'Chef',
     },
     {

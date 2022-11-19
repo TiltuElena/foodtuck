@@ -89,23 +89,28 @@ export class FooterComponent implements OnInit {
   socialMedias: SocialInterface[] = [
     {
       id: 1,
-      imgUrl: 'assets/icons/footerFacebook.png',
+      imgUrl: 'assets/icons/facebook.png',
+      link: 'https://www.facebook.com/'
     },
     {
       id: 2,
-      imgUrl: 'assets/icons/footerTwitter.png',
+      imgUrl: 'assets/icons/twitter (2).png',
+      link: 'https://www.twitter.com/'
     },
     {
       id: 3,
-      imgUrl: 'assets/icons/footerInstagram.png',
+      imgUrl: 'assets/icons/instagram.png',
+      link: 'https://www.instagram.com/'
     },
     {
       id: 4,
-      imgUrl: 'assets/icons/footerYouTube.png',
+      imgUrl: 'assets/icons/youtube.png',
+      link: 'https://www.youtube.com/'
     },
     {
       id: 5,
-      imgUrl: 'assets/icons/footerPinterest.png',
+      imgUrl: 'assets/icons/pinterest.png',
+      link: 'https://www.pinterest.com/'
     },
   ];
   constructor() {}

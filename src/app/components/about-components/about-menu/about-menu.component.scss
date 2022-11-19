@@ -1,0 +1,129 @@
+@use 'src/styles';
+
+section {
+  margin: 80px 10%;
+  font-family: sans-serif, Halvetica;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .yellow {
+    color: styles.$yellow-base;
+  }
+
+  hr {
+    margin: 16px 0 30px 0;
+    width: 100%;
+    border: 0.5px solid white;
+  }
+}
+
+.menu-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 50px 0;
+  }
+
+  .header-text {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+  }
+
+  .paragraph-text {
+    font-family: sans-serif, Inter;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.menu-food {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.menu-food span {
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  padding: 8px 17px;
+
+  &:hover {
+    color: styles.$yellow-base;
+    cursor: pointer;
+  }
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .menu-item-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menu-item-header {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    color: white;
+
+    &:hover {
+      color: styles.$yellow-base;
+      cursor: pointer;
+    }
+  }
+
+  .price {
+    color: styles.$yellow-base;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+  }
+
+  .menu-item-text {
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #999999;
+  }
+}
+
+button {
+  background: white;
+  color: styles.$yellow-base;
+  padding: 13px 25px;
+  font-size: 16px;
+  border: 1px solid styles.$yellow-base;
+  line-height: 24px;
+  cursor: pointer;
+  margin-top: 60px;
+  font-weight: bold;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

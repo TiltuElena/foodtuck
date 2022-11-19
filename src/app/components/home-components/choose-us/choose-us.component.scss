@@ -1,5 +1,4 @@
-$yellow-base: #ff9f0d;
-$dark-gray: #0d0d0d;
+@use 'src/styles';
 
 section {
   font-family: sans-serif, Inter;
@@ -73,7 +72,7 @@ section {
     font-family: "Great Vibes", cursive;
     font-size: 2.2vw;
     line-height: 4vw;
-    color: $yellow-base;
+    color: styles.$yellow-base;
   }
 
   .header-text {
@@ -84,7 +83,7 @@ section {
   }
 
   .yellow {
-    color: $yellow-base;
+    color: styles.$yellow-base;
   }
 
   .paragraph-text {
@@ -112,7 +111,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: $yellow-base;
+  background: styles.$yellow-base;
   padding: 13px;
   border-radius: 5px;
 
@@ -146,7 +145,7 @@ section {
       font-size: 3vw;
       font-weight: 700;
       line-height: 56px;
-      color: $yellow-base;
+      color: styles.$yellow-base;
     }
 
     .text-group {
@@ -173,6 +172,6 @@ section {
     border-radius: 8px 0 0 8px;
     width: 12px;
     position: absolute;
-    background: $yellow-base;
+    background: styles.$yellow-base;
   }
 }

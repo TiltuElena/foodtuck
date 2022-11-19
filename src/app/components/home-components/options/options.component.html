@@ -3,6 +3,7 @@
   <div class="options">
     <div class="option" *ngFor="let option of options">
       <img [src]="option.imageUrl" alt="OptionIcon" class="option-icon">
+<!--      <mat-icon class="option-icon">{{option.imageUrl}}</mat-icon>-->
       <span class="option-text">{{option.text}}</span>
       <span class="option-nr">{{option.nr}}</span>
     </div>

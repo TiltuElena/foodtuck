@@ -1,5 +1,4 @@
-$yellow-base: #ff9f0d;
-$gray: #4F4F4F;
+@use 'src/styles';
 
 section{
   font-family: sans-serif, Helvetica;
@@ -10,14 +9,14 @@ section{
   gap: 50px;
 
   .yellow{
-    color: $yellow-base;
+    color: styles.$yellow-base;
   }
 
   .calligraphy{
     font-family: "Great Vibes", cursive;
     font-size: 32px;
     line-height: 40px;
-    color: $yellow-base;
+    color: styles.$yellow-base;
   }
 
   .header-text{
@@ -29,7 +28,7 @@ section{
 
 .review{
   background: white;
-  color: $gray;
+  color: styles.$gray-base;
   position: relative;
   padding: 70px 50px 30px 50px;
   width: 50%;
@@ -69,7 +68,7 @@ section{
   font-size: 24px;
   font-weight: 700;
   line-height: 32px;
-  color: #0d0d0d;
+  color: styles.$dark-gray;
 }
 
 .stars{

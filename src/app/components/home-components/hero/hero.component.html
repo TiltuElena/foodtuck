@@ -3,9 +3,12 @@
   <div class="social">
     <hr />
     <div>
-      <img src="assets/icons/facebook.png" alt="facebook" />
-      <img src="assets/icons/twitter.png" alt="twitter" />
-      <img src="assets/icons/pinterest.png" alt="pinterest" />
+      <a
+        *ngFor="let socialMedia of socialMedias"
+        href="{{ socialMedia.link }}"
+        target="_blank"
+        ><img src="{{ socialMedia.imgUrl }}" alt="socialMedia"
+      /></a>
     </div>
     <hr />
   </div>
@@ -20,7 +23,7 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius sed
       pharetra dictum neque massa congue
     </div>
-    <button class="see-menu">See Menu</button>
+    <button class="see-menu" [routerLink]="menuLink">See Menu</button>
   </div>
   <div class="main-img">
     <img src="assets/images/mainImg.png" alt="salad" />

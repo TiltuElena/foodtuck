@@ -6,6 +6,8 @@ import { FoodCategoryComponent } from './food-category/food-category.component';
 import { ChooseUsComponent } from './choose-us/choose-us.component';
 import { OptionsComponent } from './options/options.component';
 import { TestimonyComponent } from './testimony/testimony.component';
+import {RouterModule} from "@angular/router";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -16,7 +18,7 @@ import { TestimonyComponent } from './testimony/testimony.component';
     OptionsComponent,
     TestimonyComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule, MatIconModule],
   exports: [
     HeroComponent,
     AboutComponent,

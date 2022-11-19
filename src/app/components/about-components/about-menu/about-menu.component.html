@@ -1,0 +1,34 @@
+<section>
+  <div class="menu-header">
+    <div class="container">
+      <div class="header-text"><span class="yellow">Ou</span>r Food Menu</div>
+      <div class="paragraph-text">
+        <span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+        <span> Varius sed pharetra dictum neque massa congue.</span>
+      </div>
+    </div>
+    <div class="menu-food">
+      <span>Breakfast</span>
+      <span>Lunch</span>
+      <span>Dinner</span>
+      <span>Dessert</span>
+      <span>Drink</span>
+      <span>Snack</span>
+    </div>
+    <hr />
+  </div>
+  <div class="menu-items">
+    <div class="menu-item" *ngFor="let menuItem of menuItems">
+      <div class="menu-item-container">
+        <div class="menu-item-text">
+          <div class="menu-item-header">{{ menuItem.header }}</div>
+          <div class="menu-item-description">{{ menuItem.text }}</div>
+          <div class="nutrition">{{ menuItem.subText }}</div>
+        </div>
+        <div class="price">{{ menuItem.price }}</div>
+      </div>
+      <hr />
+    </div>
+  </div>
+  <button [routerLink]="menuLink">View menu</button>
+</section>

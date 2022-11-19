@@ -9,6 +9,7 @@ import { PageRoutes } from '../../../ts/enum';
 })
 
 export class HeaderComponent {
+
   readonly links: LinkInterface[] = [
     {
       to: PageRoutes.Home,
