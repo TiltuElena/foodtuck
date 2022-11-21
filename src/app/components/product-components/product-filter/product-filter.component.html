@@ -1,0 +1,44 @@
+<section>
+  <div class="searchBar">
+    <input type="text" placeholder="Search Product" />
+    <img src="assets/icons/searchIcon.png" alt="search" />
+  </div>
+  <div class="categories">
+    <div class="header-text">Category</div>
+    <div *ngFor="let category of categories" class="select-categories">
+      <input type="checkbox" id="category" />
+      <label for="category">{{ category.text }}</label>
+    </div>
+  </div>
+  <div class="banner">
+    <img src="assets/images/bg6.png" alt="food" class="bg-img" />
+    <div class="banner-top">
+      <div class="mini-header">Perfect Taste</div>
+      <div class="sub-header">Classic Restaurant</div>
+      <div class="price">45.00$</div>
+    </div>
+    <div class="banner-bottom">
+      <div class="text">Shop Now</div>
+      <img src="assets/icons/arrowIcon.png" alt="arrow" />
+    </div>
+  </div>
+  <div class="filter">
+    <div class="header-text">Filter By Price</div>
+    <input type="range" id="vol" name="vol" min="0" max="8000" />
+    <div>
+      <span>$</span>
+      <span id="output"></span>
+    </div>
+  </div>
+  <div class="new-products">
+    <div class="header-text">Latest Products</div>
+    <div class="product" *ngFor="let product of products">
+      <img [src]="product.imgUrl" alt="food" />
+      <div class="product-details">
+        <div>{{ product.date }}</div>
+        <img src="assets/icons/stars.png" alt="stars" class="stars" />
+        <div>{{ product.text }}</div>
+      </div>
+    </div>
+  </div>
+</section>

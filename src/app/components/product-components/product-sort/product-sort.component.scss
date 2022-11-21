@@ -1,0 +1,29 @@
+@use "src/styles";
+
+.product-sort {
+  font-family: sans-serif, Inter;
+  display: flex;
+  gap: 50px;
+  margin: 30px 0;
+}
+
+.sort-option {
+  display: flex;
+  gap: 10px;
+  font-size: 1.2vw;
+  line-height: 2vw;
+}
+
+select {
+  width: 12vw;
+  font-size: 1.1vw;
+  color: #999999;
+  padding: 7px;
+  border-radius: 2px;
+  border: none;
+
+  &:focus,
+  &:active {
+    outline: 2px solid styles.$yellow-base;
+  }
+}

@@ -1,0 +1,108 @@
+@use "src/styles";
+
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-family: sans-serif, Inter;
+  gap: 6.4vw 1.7vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.product {
+  position: relative;
+  width: 17vw;
+
+  img {
+    width: 17vw;
+  }
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  background: white;
+  color: #0d0d0d;
+  position: absolute;
+  top: 95%;
+  width: 100%;
+  padding: 0.8vw 0.3vw;
+  box-sizing: border-box;
+}
+
+.product-header {
+  font-size: 1.2vw;
+  font-weight: 700;
+  line-height: 1.6vw;
+}
+
+.product-prices {
+  font-size: 1.1vw;
+  line-height: 1.4vw;
+  display: flex;
+  gap: 10px;
+
+  .new-price {
+    color: styles.$yellow-base;
+  }
+
+  .old-price {
+    color: #999999;
+    text-decoration: line-through;
+  }
+}
+
+figure {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: styles.$dark-gray;
+  overflow: hidden;
+
+  & img {
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.menu-navigation {
+  margin: 40px 0;
+  padding-top: 70px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+
+  div {
+    border: 1px solid styles.$yellow-base;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: styles.$yellow-base;
+    font-weight: bold;
+    background: styles.$dark-gray;
+    font-family: sans-serif, Inter;
+  }
+
+  div:hover {
+    color: white;
+    background: styles.$yellow-base;
+    box-shadow: 1px 1px 10px styles.$yellow-base;
+    cursor: pointer;
+  }
+}

@@ -3,4 +3,5 @@ export interface OptionsInterface {
   imageUrl: string;
   text: string;
   nr: string;
+  pastNr?: string;
 }

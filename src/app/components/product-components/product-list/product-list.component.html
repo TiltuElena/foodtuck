@@ -1,0 +1,21 @@
+<section>
+  <div class="product-container">
+    <div *ngFor="let product of products" class="product">
+      <figure><img [src]="product.imageUrl" alt="food" /></figure>
+      <div class="product-details">
+        <div class="product-header">{{ product.text }}</div>
+        <div class="product-prices">
+          <span class="new-price">{{ product.nr }}</span>
+          <span class="old-price">{{ product.pastNr }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-navigation">
+    <div><<</div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>>></div>
+  </div>
+</section>

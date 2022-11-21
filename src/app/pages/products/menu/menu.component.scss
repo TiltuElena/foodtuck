@@ -1,0 +1,10 @@
+section{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 0 50px;
+  margin: 0 10%;
+}
+
+app-product-sort{
+  grid-column: 1/-1;
+}

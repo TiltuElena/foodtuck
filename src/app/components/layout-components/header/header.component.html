@@ -1,18 +1,18 @@
 <nav class="header">
-    <div class="logo" [routerLink]="links[0].to">
-      <span class="yellow">Food</span><span>tuck</span>
+  <div class="logo" [routerLink]="links[0].to">
+    <span class="yellow">Food</span><span>tuck</span>
+  </div>
+  <div class="nav-links">
+    <div
+      class="link"
+      *ngFor="let link of links"
+      [routerLink]="link.to"
+      routerLinkActive="link--active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      {{ link.text }}
     </div>
-    <div class="nav-links">
-      <div
-        class="link"
-        *ngFor="let link of links"
-        [routerLink]="link.to"
-        routerLinkActive="link--active"
-        [routerLinkActiveOptions]="{ exact: true }"
-      >
-        {{ link.text }}
-      </div>
-    </div>
+  </div>
   <div class="nav-right">
     <div id="searchBar">
       <input type="text" placeholder="Search..." />
@@ -20,8 +20,7 @@
     </div>
     <div class="nav-icons">
       <span [routerLink]="LoginUrl()" class="navIcon"
-        ><img src="assets/icons/userIcon.png" alt="user"
-      />
+        ><img src="assets/icons/userIcon.png" alt="user" />
       </span>
       <span [routerLink]="CardUrl()" class="navIcon"
         ><img src="assets/icons/shopIcon.png" alt="shop"
