@@ -5,24 +5,37 @@
       <span class="yellow">Wha</span><span>t our clients are saying</span>
     </div>
   </div>
-  <div class="review">
-    <div><img src="assets/images/user.png" alt="user" id="userImg" /></div>
-    <div class="decoration">
-      <img src="assets/icons/quote.png" alt="quote" id="quote" />
-    </div>
-    <div class="user-info">
-      <div class="paragraph-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam
-        pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit
-        augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis
-        sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in
-        consequat.
+  <div class="reviewContainer">
+    <div
+      class="review fade"
+      *ngFor="let review of reviews; let i = index"
+      [ngClass]="{ 'active-review': selectedIndex === i }"
+    >
+      <div><img [src]="review.imgUrl" alt="user" id="userImg" /></div>
+      <div class="decoration">
+        <img src="assets/icons/quote.png" alt="quote" id="quote" />
       </div>
-      <div><img src="assets/icons/stars.png" alt="stars" class="stars"/></div>
-      <div class="personal bold-text">Alamin Hasan</div>
-      <div class="personal">Food Specialist</div>
+      <div class="user-info">
+        <div class="paragraph-text">
+          {{ review.text }}
+        </div>
+        <div><img [src]="review.reviewStar" alt="stars" class="stars" /></div>
+        <div class="personal bold-text">{{ review.name }}</div>
+        <div class="personal">{{ review.userF }}</div>
+      </div>
+      <img
+        src="assets/images/bg-decoration.png"
+        alt="decoration"
+        id="bg-decoration"
+      />
     </div>
-    <img src="assets/images/bg-decoration.png" alt="decoration" id="bg-decoration">
+    <div class="dot-container">
+      <span
+        *ngFor="let dot of reviews; let i = index"
+        class="dot"
+        [ngClass]="{ active: selectedIndex === i }"
+        (click)="selectReview(i)"
+      ></span>
+    </div>
   </div>
-  <div><img src="assets/icons/dots.png" alt="dots" /></div>
 </section>

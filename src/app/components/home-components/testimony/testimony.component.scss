@@ -1,6 +1,6 @@
-@use 'src/styles';
+@use "src/styles";
 
-section{
+section {
   font-family: sans-serif, Helvetica;
   margin: 100px 10% 0 10%;
   display: flex;
@@ -8,77 +8,130 @@ section{
   align-items: center;
   gap: 50px;
 
-  .yellow{
+  .yellow {
     color: styles.$yellow-base;
   }
 
-  .calligraphy{
+  .calligraphy {
     font-family: "Great Vibes", cursive;
     font-size: 32px;
     line-height: 40px;
     color: styles.$yellow-base;
   }
 
-  .header-text{
+  .header-text {
     font-size: 46px;
     font-weight: 700;
     line-height: 56px;
   }
 }
 
-.review{
+.reviewContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.review.active-review {
+  display: block;
+}
+
+.review {
   background: white;
   color: styles.$gray-base;
   position: relative;
   padding: 70px 50px 30px 50px;
   width: 50%;
-  box-shadow: 5px 5px 10px #4F4F4F;
+  box-shadow: 5px 5px 10px #4f4f4f;
+  display: none;
+  height: 20em;
 }
 
-.decoration{
+.fade {
+  animation: fade 1s ease-in-out;
+  animation-delay: 5ms;
+  transition: ease-out;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.decoration {
   display: flex;
   justify-content: center;
 }
 
-#userImg{
+#userImg {
   position: absolute;
   width: 80px;
   height: 80px;
   top: -35px;
-  left: 43.5%;
+  left: 20.5vw;
 }
 
-#quote{
+#quote {
   padding-bottom: 30px;
 }
 
-.paragraph-text{
+.paragraph-text {
   text-align: center;
   line-height: 25px;
 }
 
-.user-info{
+.user-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
 }
 
-.bold-text{
+.bold-text {
   font-size: 24px;
   font-weight: 700;
   line-height: 32px;
   color: styles.$dark-gray;
 }
 
-.stars{
+.stars {
   margin-top: 20px;
 }
 
-#bg-decoration{
+#bg-decoration {
   position: absolute;
   top: -45px;
   right: -150px;
   width: 30vw;
   height: 34vw;
+}
+
+.dot-container {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: styles.$yellow-base;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  opacity: 1;
 }

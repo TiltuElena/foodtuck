@@ -15,3 +15,5 @@ export { LinkOptionInterface } from './link-option';
 export { FormFieldsInterface } from './form-fields';
 
 export { MenuItemInterface } from './menu-item';
+
+export {ReviewInterface} from './review';
