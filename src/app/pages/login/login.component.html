@@ -4,7 +4,7 @@
     <div class="header-text">Sign Up</div>
     <form (submit)="login()">
       <div class="formField" *ngFor="let formField of formFields">
-        <img [src]="formField.iconUrl" alt="icon" class="formIcon" />
+        <img [src]="formField.imgUrl" alt="icon" class="formIcon" />
         <input
           [type]="formField.type"
           [placeholder]="formField.placeholder"
@@ -16,7 +16,7 @@
         <input type="checkbox" id="remember" />
         <label for="remember"> Remember me?</label>
       </div>
-      <button>Sign Up</button>
+      <button >Sign Up</button>
       <div class="forget" [routerLink]="forgotPasswordUrl">Forget password?</div>
       </div>
     </form>

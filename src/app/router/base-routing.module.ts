@@ -34,6 +34,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'menu/:id',
+        loadComponent: () =>
+          import('src/app/pages/products/product/product.component').then(
+            (m) => m.ProductComponent
+          ),
+      },
+      {
         path: 'cart',
         loadComponent: () =>
           import('src/app/pages/cart/cart.component').then(

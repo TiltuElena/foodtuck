@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OptionsInterface } from '../../../ts/interfaces';
+import { PostsInterface } from '../../../ts/interfaces';
 
 @Component({
   selector: 'app-about-choose-us',
@@ -9,22 +9,22 @@ import { OptionsInterface } from '../../../ts/interfaces';
 
 export class AboutChooseUsComponent implements OnInit {
 
-  items: OptionsInterface[] = [
+  items: PostsInterface[] = [
     {
       id: 1,
-      imageUrl: 'assets/icons/studentIcon.png',
+      imgUrl: 'assets/icons/studentIcon.png',
       text: 'Best Chef',
       nr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat ',
     },
     {
       id: 2,
-      imageUrl: 'assets/icons/cofeeIcon.png',
+      imgUrl: 'assets/icons/cofeeIcon.png',
       text: '120 Item food',
       nr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat ',
     },
     {
       id: 3,
-      imageUrl: 'assets/icons/personIcon.png',
+      imgUrl: 'assets/icons/personIcon.png',
       text: 'Clean Environment',
       nr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat ',
     },

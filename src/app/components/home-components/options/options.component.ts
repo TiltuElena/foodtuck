@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OptionsInterface } from '../../../ts/interfaces';
+import { PostsInterface } from '../../../ts/interfaces';
 
 @Component({
   selector: 'app-options',
@@ -7,28 +7,28 @@ import { OptionsInterface } from '../../../ts/interfaces';
   styleUrls: ['./options.component.scss'],
 })
 export class OptionsComponent implements OnInit {
-  options: OptionsInterface[] = [
+  options: PostsInterface[] = [
     {
       id: 1,
-      imageUrl: 'assets/icons/icon1.png',
+      imgUrl: 'assets/icons/icon1.png',
       text: 'Professional Chefs',
       nr: '420'
     },
     {
       id: 2,
-      imageUrl: 'assets/icons/icon2.png',
+      imgUrl: 'assets/icons/icon2.png',
       text: 'Items Of Food',
       nr: '320'
     },
     {
       id: 3,
-      imageUrl: 'assets/icons/icon3.png',
+      imgUrl: 'assets/icons/icon3.png',
       text: 'Years Of Experienced',
       nr: '30+'
     },
     {
       id: 4,
-      imageUrl: 'assets/icons/icon4.png',
+      imgUrl: 'assets/icons/icon4.png',
       text: 'Happy Customers',
       nr: '220'
     }

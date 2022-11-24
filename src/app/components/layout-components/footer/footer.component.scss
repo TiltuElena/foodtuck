@@ -15,11 +15,11 @@ footer {
   }
 
   a {
-    color: white;
+    color: styles.$white-base;
     text-decoration: none;
 
     &:visited {
-      color: white;
+      color: styles.$white-base;
     }
   }
 }
@@ -68,7 +68,7 @@ footer {
     }
 
     &::placeholder {
-      color: white;
+      color: styles.$white-base;
     }
   }
 
@@ -76,7 +76,7 @@ footer {
     width: 35%;
     border: none;
     color: styles.$yellow-base;
-    background: white;
+    background: styles.$white-base;
     border-radius: 0 3px 3px 0;
 
     &:hover {

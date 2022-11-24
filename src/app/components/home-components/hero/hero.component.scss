@@ -3,7 +3,7 @@
 section {
   font-family: sans-serif, Helvetica;
   margin: 0 55px;
-  height: 35vw;
+  height: 75vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,8 +55,8 @@ section {
   hr {
     height: 100%;
     width: 0.5px;
-    border: 1px solid white;
-    background: white;
+    border: 1px solid styles.$white-base;
+    background: styles.$white-base;
   }
 }
 
@@ -89,7 +89,7 @@ section {
   border-radius: 30px;
   padding: 17px;
   width: 25%;
-  color: white;
+  color: styles.$white-base;
   border: none;
   font-size: 0.9vw;
   min-width: 70px;

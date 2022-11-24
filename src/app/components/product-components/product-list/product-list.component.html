@@ -1,7 +1,7 @@
 <section>
   <div class="product-container">
-    <div *ngFor="let product of products" class="product">
-      <figure><img [src]="product.imageUrl" alt="food" /></figure>
+    <div *ngFor="let product of products" class="product" [routerLink]="['/menu', id]">
+      <figure><img [src]="product.imgUrl" alt="food" /></figure>
       <div class="product-details">
         <div class="product-header">{{ product.text }}</div>
         <div class="product-prices">

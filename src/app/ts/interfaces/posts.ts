@@ -1,6 +1,12 @@
 export interface PostsInterface {
   id: number;
-  imgUrl: string;
-  date: string;
   text: string;
+  imgUrl?: string;
+  date?: string;
+  nr?: string;
+  pastNr?: string;
+  reviewStar?: string;
+  name?: string;
+  subText?: string;
+  price?: string;
 }

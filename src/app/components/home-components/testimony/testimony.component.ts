@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ReviewInterface } from '../../../ts/interfaces';
+import { PostsInterface } from '../../../ts/interfaces';
 
 @Component({
   selector: 'app-testimony',
@@ -9,7 +9,7 @@ import { ReviewInterface } from '../../../ts/interfaces';
 export class TestimonyComponent implements OnInit {
   selectedIndex: number = 0;
 
-  reviews: ReviewInterface[] = [
+  reviews: PostsInterface[] = [
     {
       id: 1,
       imgUrl: 'assets/images/user2.png',
@@ -21,7 +21,7 @@ export class TestimonyComponent implements OnInit {
         '        consequat.',
       reviewStar: 'assets/icons/stars.png',
       name: 'Anne Gold',
-      userF: 'Customer',
+      subText: 'Customer',
     },
     {
       id: 2,
@@ -35,7 +35,7 @@ export class TestimonyComponent implements OnInit {
         '        consequat.',
       reviewStar: 'assets/icons/stars.png',
       name: 'Alamin Hasan',
-      userF: 'Food Specialist',
+      subText: 'Food Specialist',
     },
     {
       id: 3,
@@ -47,7 +47,7 @@ export class TestimonyComponent implements OnInit {
         '        consequat.',
       reviewStar: 'assets/icons/stars.png',
       name: 'John Holmes',
-      userF: 'Nutritionist',
+      subText: 'Nutritionist',
     },
   ];
 

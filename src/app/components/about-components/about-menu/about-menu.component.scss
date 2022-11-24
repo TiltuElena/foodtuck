@@ -14,7 +14,7 @@ section {
   hr {
     margin: 16px 0 30px 0;
     width: 100%;
-    border: 0.5px solid white;
+    border: 0.5px solid styles.$white-base;
   }
 }
 
@@ -87,7 +87,7 @@ section {
     font-size: 24px;
     font-weight: 700;
     line-height: 32px;
-    color: white;
+    color: styles.$white-base;
 
     &:hover {
       color: styles.$yellow-base;
@@ -113,7 +113,7 @@ section {
 }
 
 button {
-  background: white;
+  background: styles.$white-base;
   color: styles.$yellow-base;
   padding: 13px 25px;
   font-size: 16px;

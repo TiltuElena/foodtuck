@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LinkOptionInterface, PostsInterface } from '../../../ts/interfaces';
+import { PostsInterface } from '../../../ts/interfaces';
 
 @Component({
   selector: 'app-product-filter',
@@ -7,7 +7,7 @@ import { LinkOptionInterface, PostsInterface } from '../../../ts/interfaces';
   styleUrls: ['./product-filter.component.scss'],
 })
 export class ProductFilterComponent implements OnInit {
-  categories: LinkOptionInterface[] = [
+  categories: PostsInterface[] = [
     {
       id: 1,
       text: 'Sandwiches',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PageRoutes } from '../../../ts/enum';
-import { SocialInterface } from '../../../ts/interfaces';
+import { PostsInterface } from '../../../ts/interfaces';
 
 @Component({
   selector: 'app-hero',
@@ -10,21 +10,21 @@ import { SocialInterface } from '../../../ts/interfaces';
 export class HeroComponent implements OnInit {
   menuLink = PageRoutes.Menu;
 
-  socialMedias: SocialInterface[] = [
+  socialMedias: PostsInterface[] = [
     {
       id: 1,
       imgUrl: 'assets/icons/facebook.png',
-      link: 'https://www.facebook.com/',
+      text: 'https://www.facebook.com/',
     },
     {
       id: 2,
       imgUrl: 'assets/icons/twitter.png',
-      link: 'https://www.twitter.com/"',
+      text: 'https://www.twitter.com/"',
     },
     {
       id: 3,
       imgUrl: 'assets/icons/pinterest.png',
-      link: 'https://www.pinterest.com/',
+      text: 'https://www.pinterest.com/',
     },
   ];
   constructor() {}

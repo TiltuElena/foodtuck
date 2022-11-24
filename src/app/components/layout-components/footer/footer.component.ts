@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  LinkOptionInterface,
-  PostsInterface,
-  SocialInterface,
-} from '../../../ts/interfaces';
+import { PostsInterface } from '../../../ts/interfaces';
 
 @Component({
   selector: 'app-footer',
@@ -11,7 +7,7 @@ import {
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
-  optionLinks1: LinkOptionInterface[] = [
+  optionLinks1: PostsInterface[] = [
     {
       id: 1,
       text: 'About',
@@ -38,7 +34,7 @@ export class FooterComponent implements OnInit {
     },
   ];
 
-  optionLinks2: LinkOptionInterface[] = [
+  optionLinks2: PostsInterface[] = [
     {
       id: 1,
       text: 'FAQ',
@@ -86,31 +82,31 @@ export class FooterComponent implements OnInit {
     },
   ];
 
-  socialMedias: SocialInterface[] = [
+  socialMedias: PostsInterface[] = [
     {
       id: 1,
       imgUrl: 'assets/icons/facebook.png',
-      link: 'https://www.facebook.com/'
+      text: 'https://www.facebook.com/',
     },
     {
       id: 2,
       imgUrl: 'assets/icons/twitter (2).png',
-      link: 'https://www.twitter.com/'
+      text: 'https://www.twitter.com/',
     },
     {
       id: 3,
       imgUrl: 'assets/icons/instagram.png',
-      link: 'https://www.instagram.com/'
+      text: 'https://www.instagram.com/',
     },
     {
       id: 4,
       imgUrl: 'assets/icons/youtube.png',
-      link: 'https://www.youtube.com/'
+      text: 'https://www.youtube.com/',
     },
     {
       id: 5,
       imgUrl: 'assets/icons/pinterest.png',
-      link: 'https://www.pinterest.com/'
+      text: 'https://www.pinterest.com/',
     },
   ];
   constructor() {}

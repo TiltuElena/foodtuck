@@ -1,3 +1,70 @@
 <section>
-  <h1>Work in progress</h1>
+  <img src="assets/images/bg7.png" alt="bg-img" id="bg-img" />
+  <div class="cart-category">
+    <span>Product</span>
+    <span>Price</span>
+    <span>Quantity</span>
+    <span>Total</span>
+    <span>Remove</span>
+  </div>
+  <div *ngFor="let product of products">
+    <div class="cart-product">
+      <div class="cart-product-img">
+        <img [src]="product.imgUrl" alt="food" class="cart-img-mainImg" />
+        <div class="cart-product-img-details">
+          <div>{{ product.name }}</div>
+          <img [src]="product.reviewStar" alt="stars" />
+        </div>
+      </div>
+      <div class="price">{{ product.text }}</div>
+      <div class="cart-quantity">
+        <span>-</span>
+        <span id="count">1</span>
+        <span>+</span>
+      </div>
+      <div class="price bold">{{ product.price }}</div>
+      <img
+        src="assets/icons/cancel-icon-transparent-3.jpg"
+        alt="x"
+        class="delete-icon"
+      />
+    </div>
+    <hr />
+  </div>
+  <div class="bill">
+    <div class="bill-left">
+      <div class="bill-header">Coupon Code</div>
+      <div class="coupon-container">
+        <div class="text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam
+          pellentesque bibendum non
+        </div>
+        <div class="activate-coupon">
+          <input type="text" placeholder="Enter here Code" />
+          <button>Apply</button>
+        </div>
+      </div>
+    </div>
+    <div class="bill-right">
+      <div class="bill-header">Total Bill</div>
+      <div class="external-container">
+        <div>
+          <div class="text-special bold price-container price-container-bold">
+            <span>Cart Subtotal</span><span>$120.00</span>
+          </div>
+          <div class="text price-container">
+            <span>Shipping Charge</span><span>$00.00</span>
+          </div>
+        </div>
+        <hr />
+        <div class="text-special bold price-container price-container-bold">
+          <span>Total Amount</span><span>$205.00</span>
+        </div>
+      </div>
+      <button>
+        <span>Proceed to Checkout</span
+        ><img src="assets/icons/checkOrderIcon.png" alt="check" />
+      </button>
+    </div>
+  </div>
 </section>

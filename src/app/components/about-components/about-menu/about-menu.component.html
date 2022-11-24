@@ -21,9 +21,9 @@
     <div class="menu-item" *ngFor="let menuItem of menuItems">
       <div class="menu-item-container">
         <div class="menu-item-text">
-          <div class="menu-item-header">{{ menuItem.header }}</div>
+          <div class="menu-item-header">{{ menuItem.name }}</div>
           <div class="menu-item-description">{{ menuItem.text }}</div>
-          <div class="nutrition">{{ menuItem.subText }}</div>
+          <div class="nutrition">{{ menuItem.nr }}</div>
         </div>
         <div class="price">{{ menuItem.price }}</div>
       </div>

@@ -1,0 +1,114 @@
+<section>
+  <div class="section-top">
+    <div class="img-container">
+      <div class="food-container">
+        <img
+          *ngFor="let image of images"
+          [src]="image.imgUrl"
+          alt="food"
+          class="smallFood"
+        />
+      </div>
+      <div>
+        <img src="assets/images/imgL.png" alt="Food" class="mainImg" />
+      </div>
+    </div>
+    <div class="product-details">
+      <div class="product-details-container">
+        <div class="details-top-header">
+          <span class="stock">In stock</span>
+          <div class="arrows">
+            <div class="arrow">
+              <img src="assets/icons/arrowLeft.png" alt="arrow" />
+              <span>Prev</span>
+            </div>
+            <div class="arrow">
+              <span>Next</span>
+              <img src="assets/icons/arrowRight.png" alt="arrow" />
+            </div>
+          </div>
+        </div>
+        <div class="details-text">
+          <div class="header-text">Yummy Chicken Soup</div>
+          <div class="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+            diam pellentesque bibendum non dui volutpat fringilla bibendum.
+            Urna, urna, vitae feugiat pretium donec id elementum. Ultrices
+            mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit
+            in consequat.
+          </div>
+        </div>
+        <hr />
+      </div>
+      <div class="product-details-container">
+        <div class="price">54.00$</div>
+        <div class="rating">
+          <img src="assets/icons/fullStar.png" alt="stars" />
+          <hr />
+          <div class="rating-text">5.0 Rating</div>
+          <hr />
+          <div class="rating-text">22 Review</div>
+        </div>
+        <div class="tags">Dictum/cursus/Risus</div>
+        <div class="buttons">
+          <div class="count">
+            <button (click)="decrease()" [disabled]= disabled>-</button>
+            <div>{{count}}</div>
+            <button (click)="increase()">+</button>
+          </div>
+          <button class="cart">
+            <img src="assets/icons/shopIcon.png" alt="shop" />Add to cart
+          </button>
+        </div>
+        <hr />
+      </div>
+      <div class="bottom-tags tags">
+        <div>
+          <img src="assets/icons/heartIcon.png" alt="heart" />
+          <span>Add to Wishlist</span>
+        </div>
+        <div>
+          <img src="assets/icons/gitIcon.png" alt="compare" />
+          <span>Compare</span>
+        </div>
+        <div><span class="highlight">Category:</span> Fast Food</div>
+      </div>
+    </div>
+  </div>
+  <div class="description">
+    <div class="description-header">
+      <span class="description-tag">Description</span>
+      <span class="description-review-count">Reviews(24)</span>
+    </div>
+    <div class="description-paragraph">
+      Suspendisse cursus sodales placerat. Morbi eu lacinia ex. Curabitur
+      blandit justo urna, id porttitor est dignissim nec. Pellentesque
+      scelerisque hendrerit posuere. Sed at dolor quis nisi rutrum accumsan et
+      sagittis massa. Aliquam aliquam accumsan lectus quis auctor. Curabitur
+      rutrum massa at volutpat placerat. Duis sagittis vehicula fermentum.
+      Integer eu vulputate justo. Aenean pretium odio vel tempor sodales.
+      Suspendisse eu fringilla leo, non aliquet sem.
+    </div>
+    <div class="description-paragraph">
+      Nam tristique porta ligula, vel viverra sem eleifend nec. Nulla sed purus
+      augue, eu euismod tellus. Nam mattis eros nec mi sagittis sagittis.
+      Vestibulum suscipit cursus bibendum. Integer at justo eget sem auctor
+      auctor eget vitae arcu. Nam tempor malesuada porttitor. Nulla quis
+      dignissim ipsum. Aliquam pulvinar iaculis justo, sit amet interdum sem
+      hendrerit vitae. Vivamus vel erat tortor. Nulla facilisi. In nulla quam,
+      lacinia eu aliquam ac, aliquam in nisl.
+    </div>
+    <div class="description-benefits">
+      <div class="description-list-header">Key Benefits</div>
+      <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        <li>Maecenas ullamcorper est et massa mattis condimentum.</li>
+        <li>
+          Vestibulum sed massa vel ipsum imperdiet malesuada id tempus nisl.
+        </li>
+        <li>Etiam nec massa et lectus faucibus ornare congue in nunc.</li>
+        <li>Mauris eget diam magna, in blandit turpis.</li>
+      </ul>
+    </div>
+  </div>
+</section>

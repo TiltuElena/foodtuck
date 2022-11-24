@@ -3,10 +3,11 @@
 $dark-gray: #0d0d0d;
 $yellow-base: #ff9f0d;
 $gray-base: #4f4f4f;
+$white-base: #ffffff;
 
 body {
   background: $dark-gray;
-  color: white;
+  color: $white-base;
   margin: 0;
   padding: 0;
 }

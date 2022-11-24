@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FoodCategoryInterface } from '../../../ts/interfaces';
+import { FormFieldsInterface } from '../../../ts/interfaces';
 
 @Component({
   selector: 'app-about-partners',
@@ -8,7 +8,7 @@ import { FoodCategoryInterface } from '../../../ts/interfaces';
 })
 export class AboutPartnersComponent implements OnInit {
 
-  partners: FoodCategoryInterface[] = [
+  partners: FormFieldsInterface[] = [
     {
       id: 1,
       imgUrl: 'assets/icons/cooperate1.png',

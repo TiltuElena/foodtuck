@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OptionsInterface } from '../../../ts/interfaces';
+import { PostsInterface } from '../../../ts/interfaces';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -7,104 +8,117 @@ import { OptionsInterface } from '../../../ts/interfaces';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit {
-  products: OptionsInterface[] = [
+  products: PostsInterface[] = [
     {
       id: 1,
-      imageUrl: 'assets/images/menuImg1.png',
+      imgUrl: 'assets/images/menuImg1.png',
       text: 'Fresh Salad',
       nr: '$38.00',
       pastNr: '$45.00',
     },
     {
       id: 2,
-      imageUrl: 'assets/images/menuImg2.png',
+      imgUrl: 'assets/images/menuImg2.png',
       text: 'Chocolate muffin',
       nr: '$28.00'
     },
     {
       id: 3,
-      imageUrl: 'assets/images/menuImg3.png',
+      imgUrl: 'assets/images/menuImg3.png',
       text: 'Burger',
       nr: '$21.00',
       pastNr: '$45.00',
     },
     {
       id: 4,
-      imageUrl: 'assets/images/menuImg4.png',
+      imgUrl: 'assets/images/menuImg4.png',
       text: 'Country Burger',
       nr: '$45.00'
     },
     {
       id: 5,
-      imageUrl: 'assets/images/menuImg5.png',
+      imgUrl: 'assets/images/menuImg5.png',
       text: 'Drink',
       nr: '$23.00',
       pastNr: '$45.00',
     },
     {
       id: 6,
-      imageUrl: 'assets/images/menuImg6.png',
+      imgUrl: 'assets/images/menuImg6.png',
       text: 'Pizza',
       nr: '$43.00'
     },
     {
       id: 7,
-      imageUrl: 'assets/images/menuImg7.png',
+      imgUrl: 'assets/images/menuImg7.png',
       text: 'Cheese Butter',
       nr: '$10.00'
     },
     {
       id: 8,
-      imageUrl: 'assets/images/menuImg8.png',
+      imgUrl: 'assets/images/menuImg8.png',
       text: 'Sandwiches',
       nr: '$25.00'
     },
     {
       id: 9,
-      imageUrl: 'assets/images/menuImg9.png',
+      imgUrl: 'assets/images/menuImg9.png',
       text: 'Chicken Soup',
       nr: '$12.00'
     },
     {
       id: 10,
-      imageUrl: 'assets/images/menuImg4.png',
+      imgUrl: 'assets/images/menuImg4.png',
       text: 'Country Burger',
       nr: '$45.00'
     },
     {
       id: 11,
-      imageUrl: 'assets/images/menuImg5.png',
+      imgUrl: 'assets/images/menuImg5.png',
       text: 'Drink',
       nr: '$23.00',
       pastNr: '$45.00',
     },
     {
       id: 12,
-      imageUrl: 'assets/images/menuImg6.png',
+      imgUrl: 'assets/images/menuImg6.png',
       text: 'Pizza',
       nr: '$43.00'
     },
     {
       id: 13,
-      imageUrl: 'assets/images/menuImg7.png',
+      imgUrl: 'assets/images/menuImg7.png',
       text: 'Cheese Butter',
       nr: '$10.00'
     },
     {
       id: 14,
-      imageUrl: 'assets/images/menuImg8.png',
+      imgUrl: 'assets/images/menuImg8.png',
       text: 'Sandwiches',
       nr: '$25.00'
     },
     {
       id: 15,
-      imageUrl: 'assets/images/menuImg9.png',
+      imgUrl: 'assets/images/menuImg9.png',
       text: 'Chicken Soup',
       nr: '$12.00'
     },
   ];
 
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
+  productIds = this.products.map(({ id }) => id);
+  id:number = 0;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // console.log(this.productIds)
+    // this.route.paramMap.subscribe(data => {
+    //   console.log(data)
+      // this.getProductById( params['id']);
+      // this.id = data['id'];
+    // });
+  }
+
+  // getProductById(id:number){
+  //   this.productIds.map(i=> {this.id = i; })
+  // }
 }

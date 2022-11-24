@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FoodCategoryInterface } from '../../../ts/interfaces';
+import { FormFieldsInterface } from '../../../ts/interfaces';
 
 @Component({
   selector: 'app-food-category',
@@ -8,7 +8,7 @@ import { FoodCategoryInterface } from '../../../ts/interfaces';
 })
 export class FoodCategoryComponent implements OnInit {
 
-  foods: FoodCategoryInterface[] = [
+  foods: FormFieldsInterface[] = [
     {
       id: 1,
       imgUrl: 'assets/images/choose1.png',

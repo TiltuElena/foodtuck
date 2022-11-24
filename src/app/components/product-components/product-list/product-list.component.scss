@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: column;
   gap: 7px;
-  background: white;
+  background: styles.$white-base;
   color: #0d0d0d;
   position: absolute;
   top: 95%;
@@ -100,7 +100,7 @@ figure {
   }
 
   div:hover {
-    color: white;
+    color: styles.$white-base;
     background: styles.$yellow-base;
     box-shadow: 1px 1px 10px styles.$yellow-base;
     cursor: pointer;

@@ -1,3 +1,5 @@
+@use "src/styles";
+
 section {
   margin: 100px 0;
   font-family: sans-serif, Helvetica;
@@ -11,7 +13,7 @@ section {
   font-size: 96px;
   font-weight: 700;
   line-height: 104px;
-  color: #ff9f0d;
+  color: styles.$yellow-base;
 }
 
 .errorText {
@@ -32,8 +34,8 @@ section {
 }
 
 button {
-  color: white;
-  background: #ff9f0d;
+  color: styles.$white-base;
+  background: styles.$yellow-base;
   padding: 16px 30px;
   border-radius: 8px;
   font-size: 17px;
