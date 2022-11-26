@@ -27,3 +27,8 @@ select {
     outline: 2px solid styles.$yellow-base;
   }
 }
+
+ select option:focus-within {
+  background: #ff9f0d;
+  color: white;
+}
