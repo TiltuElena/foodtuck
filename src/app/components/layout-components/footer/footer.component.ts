@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsInterface } from '../../../ts/interfaces';
+import { PostsInterface } from '@/ts/interfaces';
+import { LayoutDetailsService } from '../config/layout-details.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,109 +8,22 @@ import { PostsInterface } from '../../../ts/interfaces';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
-  optionLinks1: PostsInterface[] = [
-    {
-      id: 1,
-      text: 'About',
-    },
-    {
-      id: 2,
-      text: 'News',
-    },
-    {
-      id: 3,
-      text: 'Partners',
-    },
-    {
-      id: 4,
-      text: 'Team',
-    },
-    {
-      id: 5,
-      text: 'Menu',
-    },
-    {
-      id: 6,
-      text: 'Contacts',
-    },
-  ];
+  optionLinks1: PostsInterface[] = [];
+  optionLinks2: PostsInterface[] = [];
+  posts: PostsInterface[] = [];
+  socialMedias: PostsInterface[] = [];
 
-  optionLinks2: PostsInterface[] = [
-    {
-      id: 1,
-      text: 'FAQ',
-    },
-    {
-      id: 2,
-      text: 'Term & conditions',
-    },
-    {
-      id: 3,
-      text: 'Reporting',
-    },
-    {
-      id: 4,
-      text: 'Documentation',
-    },
-    {
-      id: 5,
-      text: 'Support Policy',
-    },
-    {
-      id: 6,
-      text: 'Privacy',
-    },
-  ];
+  constructor(
+    private optionList1: LayoutDetailsService,
+    private optionList2: LayoutDetailsService,
+    private postList: LayoutDetailsService,
+    private socialMediaList: LayoutDetailsService
+  ) {}
 
-  posts: PostsInterface[] = [
-    {
-      id: 1,
-      imgUrl: 'assets/images/footerImg1.png',
-      date: '20 Feb 2022',
-      text: 'Keep Your Business',
-    },
-    {
-      id: 2,
-      imgUrl: 'assets/images/footerImg2.png',
-      date: '20 Feb 2022',
-      text: 'Keep Your Business',
-    },
-    {
-      id: 3,
-      imgUrl: 'assets/images/footerImg3.png',
-      date: '20 Feb 2022',
-      text: 'Keep Your Business',
-    },
-  ];
-
-  socialMedias: PostsInterface[] = [
-    {
-      id: 1,
-      imgUrl: 'assets/icons/facebook.png',
-      text: 'https://www.facebook.com/',
-    },
-    {
-      id: 2,
-      imgUrl: 'assets/icons/twitter (2).png',
-      text: 'https://www.twitter.com/',
-    },
-    {
-      id: 3,
-      imgUrl: 'assets/icons/instagram.png',
-      text: 'https://www.instagram.com/',
-    },
-    {
-      id: 4,
-      imgUrl: 'assets/icons/youtube.png',
-      text: 'https://www.youtube.com/',
-    },
-    {
-      id: 5,
-      imgUrl: 'assets/icons/pinterest.png',
-      text: 'https://www.pinterest.com/',
-    },
-  ];
-  constructor() {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.optionLinks1 = this.optionList1.optionLinks1;
+    this.optionLinks2 = this.optionList2.optionLinks2;
+    this.posts = this.postList.posts;
+    this.socialMedias = this.socialMediaList.socialMedias;
+  }
 }

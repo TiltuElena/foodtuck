@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {LayoutComponentsModule} from "../../components/layout-components/layout-components.module";
+import {LayoutComponentsModule} from "@/components/layout-components/layout-components.module";
 import {RouterOutlet} from "@angular/router";
 
 @Component({

@@ -1,59 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PostsInterface } from '../../ts/interfaces';
+import { PostsInterface } from '@/ts/interfaces';
+import { CartComponentsModule } from '@/components/cart-components/cart-components.module';
+import { CartDetailsService } from '@/components/cart-components/config/cart-details.service';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CartComponentsModule],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss'],
+  providers: [CartDetailsService],
 })
 export class CartComponent implements OnInit {
-  products: PostsInterface[] = [
-    {
-      id: 1,
-      imgUrl: 'assets/images/cartImg1.png',
-      reviewStar: 'assets/icons/lessStarIcon.png',
-      text: '$35.00',
-      price: '$221.00',
-      name: 'Burger',
-    },
-    {
-      id: 2,
-      imgUrl: 'assets/images/cartImg2.png',
-      reviewStar: 'assets/icons/lessStarIcon.png',
-      text: '$55.00',
-      price: '$521.00',
-      name: 'Fresh Lime',
-    },
-    {
-      id: 3,
-      imgUrl: 'assets/images/cartImg3.png',
-      reviewStar: 'assets/icons/lessStarIcon.png',
-      text: '$15.00',
-      price: '$421.00',
-      name: 'Donuts',
-    },
-    {
-      id: 4,
-      imgUrl: 'assets/images/cartImg4.png',
-      reviewStar: 'assets/icons/lessStarIcon.png',
-      text: '$45.00',
-      price: '$521.00',
-      name: 'Chocolate Muffin',
-    },
-    {
-      id: 5,
-      imgUrl: 'assets/images/cartImg5.png',
-      reviewStar: 'assets/icons/lessStarIcon.png',
-      text: '$15.00',
-      price: '$325.00',
-      name: 'Chicken Soup',
-    },
-  ];
+  public products: PostsInterface[] = [];
+  cartTotal: number = 0;
+  shipping: number = 5.15;
+  total: number = 0;
 
-  constructor() {}
+  getTotalPrice(totalPrice: string) {
+    this.cartTotal += Number(totalPrice);
+    this.total = this.cartTotal + this.shipping;
 
-  ngOnInit(): void {}
+    if (this.cartTotal === 0) {
+      this.total = 0;
+    }
+  }
+
+  constructor(private productList: CartDetailsService) {}
+  ngOnInit() {
+    this.products = this.productList.products;
+  }
 }

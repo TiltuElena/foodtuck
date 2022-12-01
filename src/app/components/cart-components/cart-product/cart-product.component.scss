@@ -1,0 +1,102 @@
+@use "src/styles";
+
+  hr {
+    border: 0.5px solid #888888;
+    background: #888888;
+    margin: 20px 0;
+  }
+
+  .bold {
+    font-weight: 700;
+    font-family: sans-serif, Inter;
+  }
+
+.cart-product {
+  display: grid;
+  grid-template-columns: 1.8fr repeat(4, 1fr);
+  gap: 10%;
+  align-items: center;
+  text-align: center;
+
+  .price {
+    font-family: sans-serif, Helvetica;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.cart-product-img {
+  display: flex;
+  gap: 20px;
+
+  .cart-img-mainImg {
+    border-radius: 5px;
+    width: 90px;
+    height: 90px;
+  }
+
+  .cart-product-img-details {
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: start;
+
+    img {
+      width: 110px;
+      height: 25px;
+    }
+  }
+}
+
+.delete-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  justify-self: center;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.cart-quantity {
+  display: flex;
+  gap: 12px;
+  font-size: 25px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid styles.$white-base;
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 3px;
+  box-sizing: border-box;
+
+  &:hover, &:hover button {
+    background: #222222;
+  }
+
+  button{
+    background: styles.$dark-gray;
+    border: styles.$dark-gray;
+    color: white;
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    color: styles.$yellow-base;
+  }
+
+  #count {
+    font-size: 20px;
+    cursor: context-menu;
+
+    &:hover {
+      color: styles.$white-base;
+    }
+  }
+}

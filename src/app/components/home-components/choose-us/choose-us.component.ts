@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsInterface} from '../../../ts/interfaces';
+import { PostsInterface } from '@/ts/interfaces';
+import { HomeDetailsService } from '../config/home-details.service';
 
 @Component({
   selector: 'app-choose-us',
@@ -7,25 +8,11 @@ import { PostsInterface} from '../../../ts/interfaces';
   styleUrls: ['./choose-us.component.scss'],
 })
 export class ChooseUsComponent implements OnInit {
+  icons: PostsInterface[] = [];
 
-  icons: PostsInterface[] = [
-    {
-      id: 1,
-      imgUrl: 'assets/icons/hamburgerIcon.png',
-      text: 'Fast Food',
-    },
-    {
-      id: 2,
-      imgUrl: 'assets/icons/cookieIcon.png',
-      text: 'Lunch',
-    },
-    {
-      id: 3,
-      imgUrl: 'assets/icons/wineicon.png',
-      text: 'Dinner',
-    },
-  ];
-  constructor() {}
+  constructor(private iconList: HomeDetailsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.icons = this.iconList.icons;
+  }
 }

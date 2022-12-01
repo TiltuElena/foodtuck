@@ -1,19 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {HomeComponentsModule} from "../../components/home-components/home-components.module";
+import { HomeComponentsModule } from '@/components/home-components/home-components.module';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule, HomeComponentsModule],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

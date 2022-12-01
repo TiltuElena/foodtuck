@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsInterface } from '../../../ts/interfaces';
+import { PostsInterface } from '@/ts/interfaces';
+import { ProductDetailsService } from '../config/product-details.service';
 
 @Component({
   selector: 'app-product-filter',
@@ -7,71 +8,18 @@ import { PostsInterface } from '../../../ts/interfaces';
   styleUrls: ['./product-filter.component.scss'],
 })
 export class ProductFilterComponent implements OnInit {
-  categories: PostsInterface[] = [
-    {
-      id: 1,
-      text: 'Sandwiches',
-    },
-    {
-      id: 2,
-      text: 'Burger',
-    },
-    {
-      id: 3,
-      text: 'Chicken Soup',
-    },
-    {
-      id: 4,
-      text: 'Drink',
-    },
-    {
-      id: 5,
-      text: 'Pizza',
-    },
-    {
-      id: 6,
-      text: 'Thi',
-    },
-    {
-      id: 7,
-      text: 'Non Veg',
-    },
-    {
-      id: 8,
-      text: 'Uncategorized',
-    },
-  ];
+  categories: PostsInterface[] = [];
+  products: PostsInterface[] = [];
 
-  products: PostsInterface[] = [
-    {
-      id: 1,
-      imgUrl: 'assets/images/menuImg6.png',
-      date: 'Pizza',
-      text: '$35.00',
-    },
-    {
-      id: 2,
-      imgUrl: 'assets/images/menuImg4.png',
-      date: 'Burger',
-      text: '$30.00',
-    },
-    {
-      id: 3,
-      imgUrl: 'assets/images/menuImg8.png',
-      date: 'Sandwich',
-      text: '$25.00',
-    },
-    {
-      id: 4,
-      imgUrl: 'assets/images/menuImg1.png',
-      date: 'Salad',
-      text: '$20.00',
-    },
-  ];
-
-  constructor() {}
+  constructor(
+    private categoryList: ProductDetailsService,
+    private productList: ProductDetailsService
+  ) {}
 
   ngOnInit(): void {
+    this.products = this.productList.products;
+    this.categories = this.categoryList.categories;
+
     const slider: any = document.getElementById('vol');
     const output: any = document.getElementById('output');
 

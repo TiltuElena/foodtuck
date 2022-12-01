@@ -1,6 +1,7 @@
-import { Component} from '@angular/core';
-import { LinkInterface } from '../../../ts/interfaces';
-import { PageRoutes } from '../../../ts/enum';
+import { Component, OnInit } from '@angular/core';
+import { LinkInterface } from '@/ts/interfaces';
+import { PageRoutes } from '@/ts/enum';
+import { LayoutDetailsService } from '../config/layout-details.service';
 
 @Component({
   selector: 'app-header',
@@ -8,30 +9,20 @@ import { PageRoutes } from '../../../ts/enum';
   styleUrls: ['./header.component.scss'],
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
+  links: LinkInterface[] = [];
 
-  readonly links: LinkInterface[] = [
-    {
-      to: PageRoutes.Home,
-      text: 'Home',
-    },
-    {
-      to: PageRoutes.Menu,
-      text: 'Menu',
-    },
-    {
-      to: PageRoutes.About,
-      text: 'About',
-    },
-  ];
+  constructor(private linkList: LayoutDetailsService) {}
 
-  constructor() {}
-
-  CardUrl():string {
-    return PageRoutes.Cart
+  CardUrl(): string {
+    return PageRoutes.Cart;
   }
 
-  LoginUrl():string {
-    return PageRoutes.Login
+  LoginUrl(): string {
+    return PageRoutes.Login;
+  }
+
+  ngOnInit() {
+    this.links = this.linkList.links;
   }
 }

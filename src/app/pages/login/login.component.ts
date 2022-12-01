@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormFieldsInterface } from '../../ts/interfaces';
-import { PageRoutes } from '../../ts/enum';
+import { FormFieldsInterface } from '@/ts/interfaces';
+import { PageRoutes } from '@/ts/enum';
 import { RouterLink } from '@angular/router';
 
 @Component({

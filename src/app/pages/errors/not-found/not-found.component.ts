@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PageRoutes } from '../../../ts/enum';
+import { PageRoutes } from '@/ts/enum';
 import { RouterLink } from '@angular/router';
 
 @Component({

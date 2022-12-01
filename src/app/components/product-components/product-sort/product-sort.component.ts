@@ -3,13 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-product-sort',
   templateUrl: './product-sort.component.html',
-  styleUrls: ['./product-sort.component.scss']
+  styleUrls: ['./product-sort.component.scss'],
 })
 export class ProductSortComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  constructor() {}
+  ngOnInit(): void {}
 }

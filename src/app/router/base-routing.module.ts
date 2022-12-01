@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { PageErrors } from '../ts/enum';
+import { PageErrors } from '@/ts/enum';
 import { AuthRouterModule } from './auth-router.module';
 
 const routes: Routes = [

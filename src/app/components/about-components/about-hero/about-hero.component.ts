@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PageRoutes} from "../../../ts/enum";
+import {PageRoutes} from '@/ts/enum';
 
 @Component({
   selector: 'app-about-hero',

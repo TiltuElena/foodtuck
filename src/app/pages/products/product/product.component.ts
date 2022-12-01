@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormFieldsInterface } from '../../../ts/interfaces';
+import { FormFieldsInterface } from '@/ts/interfaces';
 
 @Component({
   selector: 'app-product',

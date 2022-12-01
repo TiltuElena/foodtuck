@@ -1,6 +1,6 @@
 export interface PostsInterface {
   id: number;
-  text: string;
+  text?: string;
   imgUrl?: string;
   date?: string;
   nr?: string;

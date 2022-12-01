@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PageRoutes } from '../../../ts/enum';
-import { PostsInterface } from '../../../ts/interfaces';
+import { PageRoutes } from '@/ts/enum';
+import { PostsInterface } from '@/ts/interfaces';
+import { HomeDetailsService } from '../config/home-details.service';
 
 @Component({
   selector: 'app-hero',
@@ -9,25 +10,11 @@ import { PostsInterface } from '../../../ts/interfaces';
 })
 export class HeroComponent implements OnInit {
   menuLink = PageRoutes.Menu;
+  socialMedias: PostsInterface[] = [];
 
-  socialMedias: PostsInterface[] = [
-    {
-      id: 1,
-      imgUrl: 'assets/icons/facebook.png',
-      text: 'https://www.facebook.com/',
-    },
-    {
-      id: 2,
-      imgUrl: 'assets/icons/twitter.png',
-      text: 'https://www.twitter.com/"',
-    },
-    {
-      id: 3,
-      imgUrl: 'assets/icons/pinterest.png',
-      text: 'https://www.pinterest.com/',
-    },
-  ];
-  constructor() {}
+  constructor(private socialMediaList: HomeDetailsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.socialMedias = this.socialMediaList.socialMedias;
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormFieldsInterface } from '../../../ts/interfaces';
+import { FormFieldsInterface } from '@/ts/interfaces';
+import { HomeDetailsService } from '../config/home-details.service';
 
 @Component({
   selector: 'app-food-category',
@@ -7,27 +8,11 @@ import { FormFieldsInterface } from '../../../ts/interfaces';
   styleUrls: ['./food-category.component.scss'],
 })
 export class FoodCategoryComponent implements OnInit {
+  foods: FormFieldsInterface[] = [];
 
-  foods: FormFieldsInterface[] = [
-    {
-      id: 1,
-      imgUrl: 'assets/images/choose1.png',
-    },
-    {
-      id: 2,
-      imgUrl: 'assets/images/choose2.png',
-    },
-    {
-      id: 3,
-      imgUrl: 'assets/images/choose3.png',
-    },
-    {
-      id: 4,
-      imgUrl: 'assets/images/choose4.png',
-    },
-  ];
+  constructor(private foodList: HomeDetailsService) {}
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.foods = this.foodList.foods;
+  }
 }

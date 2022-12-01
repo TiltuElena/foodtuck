@@ -7,28 +7,7 @@
     <span>Remove</span>
   </div>
   <div *ngFor="let product of products">
-    <div class="cart-product">
-      <div class="cart-product-img">
-        <img [src]="product.imgUrl" alt="food" class="cart-img-mainImg" />
-        <div class="cart-product-img-details">
-          <div>{{ product.name }}</div>
-          <img [src]="product.reviewStar" alt="stars" />
-        </div>
-      </div>
-      <div class="price">{{ product.text }}</div>
-      <div class="cart-quantity">
-        <span >-</span>
-        <span id="count">1</span>
-        <span >+</span>
-      </div>
-      <div class="price bold">{{ product.price }}</div>
-      <img
-        src="assets/icons/cancel-icon-transparent-3.jpg"
-        alt="x"
-        class="delete-icon"
-      />
-    </div>
-    <hr />
+    <app-cart-product [item]="product" (totalPrice)="getTotalPrice($event)" ></app-cart-product>
   </div>
   <div class="bill">
     <div class="bill-left">
@@ -49,15 +28,15 @@
       <div class="external-container">
         <div>
           <div class="text-special bold price-container price-container-bold">
-            <span>Cart Subtotal</span><span>$120.00</span>
+            <span>Cart Subtotal</span><span>${{cartTotal}}</span>
           </div>
           <div class="text price-container">
-            <span>Shipping Charge</span><span>$00.00</span>
+            <span>Shipping Charge</span><span>${{shipping}}</span>
           </div>
         </div>
         <hr />
         <div class="text-special bold price-container price-container-bold">
-          <span>Total Amount</span><span>$205.00</span>
+          <span>Total Amount</span><span>${{total}}</span>
         </div>
       </div>
       <button>

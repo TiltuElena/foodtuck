@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsInterface } from '../../../ts/interfaces';
-import { PageRoutes } from '../../../ts/enum';
+import { PostsInterface } from '@/ts/interfaces';
+import { PageRoutes } from '@/ts/enum';
+import { AboutDetailsService } from '../config/about-details.service';
 
 @Component({
   selector: 'app-about-menu',
@@ -8,69 +9,12 @@ import { PageRoutes } from '../../../ts/enum';
   styleUrls: ['./about-menu.component.scss'],
 })
 export class AboutMenuComponent implements OnInit {
-
   menuLink = PageRoutes.Menu;
+  menuItems: PostsInterface[] = [];
 
-  menuItems: PostsInterface[] = [
-    {
-      id: 1,
-      name: 'Alder Grilled Chinook Salmon',
-      text: 'Toasted French bread topped with romano, cheddar',
-      nr: '560 CAL',
-      price: '32$',
-    },
-    {
-      id: 2,
-      name: 'Alder Grilled Chinook Salmon',
-      text: 'Toasted French bread topped with romano, cheddar',
-      nr: '560 CAL',
-      price: '32$',
-    },
-    {
-      id: 3,
-      name: 'Alder Grilled Chinook Salmon',
-      text: 'Toasted French bread topped with romano, cheddar',
-      nr: '560 CAL',
-      price: '32$',
-    },
-    {
-      id: 4,
-      name: 'Alder Grilled Chinook Salmon',
-      text: 'Toasted French bread topped with romano, cheddar',
-      nr: '560 CAL',
-      price: '32$',
-    },
-    {
-      id: 5,
-      name: 'Alder Grilled Chinook Salmon',
-      text: 'Toasted French bread topped with romano, cheddar',
-      nr: '560 CAL',
-      price: '32$',
-    },
-    {
-      id: 6,
-      name: 'Alder Grilled Chinook Salmon',
-      text: 'Toasted French bread topped with romano, cheddar',
-      nr: '560 CAL',
-      price: '32$',
-    },
-    {
-      id: 7,
-      name: 'Alder Grilled Chinook Salmon',
-      text: 'Toasted French bread topped with romano, cheddar',
-      nr: '560 CAL',
-      price: '32$',
-    },
-    {
-      id: 8,
-      name: 'Alder Grilled Chinook Salmon',
-      text: 'Toasted French bread topped with romano, cheddar',
-      nr: '560 CAL',
-      price: '32$',
-    },
-  ];
+  constructor(private menuList: AboutDetailsService) {}
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.menuItems = this.menuList.menuItems;
+  }
 }
