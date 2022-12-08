@@ -12,9 +12,18 @@ export class HeroComponent implements OnInit {
   menuLink = PageRoutes.Menu;
   socialMedias: PostsInterface[] = [];
 
-  constructor(private socialMediaList: HomeDetailsService) {}
+  constructor(private httpService: HomeDetailsService) {}
 
   ngOnInit(): void {
-    this.socialMedias = this.socialMediaList.socialMedias;
+    this.httpService.getHomeSocialMedia().subscribe(
+      (response: any) => {
+        for (let product of response.data) {
+          this.socialMedias.push(product.attributes);
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

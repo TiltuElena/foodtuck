@@ -10,9 +10,18 @@ import { HomeDetailsService } from '../config/home-details.service';
 export class FoodCategoryComponent implements OnInit {
   foods: FormFieldsInterface[] = [];
 
-  constructor(private foodList: HomeDetailsService) {}
+  constructor(private httpService: HomeDetailsService) {}
 
   ngOnInit(): void {
-    this.foods = this.foodList.foods;
+    this.httpService.getHomeFood().subscribe(
+      (response: any) => {
+        for (let product of response.data) {
+          this.foods.push(product.attributes);
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

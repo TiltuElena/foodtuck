@@ -11,10 +11,19 @@ export class TestimonyComponent implements OnInit {
   selectedIndex: number = 0;
   reviews: PostsInterface[] = [];
 
-  constructor(private reviewList: HomeDetailsService) {}
+  constructor(private httpService: HomeDetailsService) {}
 
   ngOnInit(): void {
-    this.reviews = this.reviewList.reviews;
+    this.httpService.getHomeReviews().subscribe(
+      (response: any) => {
+        for (let product of response.data) {
+          this.reviews.push(product.attributes);
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
 
     this.autoSlideReviews();
   }

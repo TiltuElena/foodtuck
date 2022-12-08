@@ -10,9 +10,18 @@ import { AboutDetailsService } from '../config/about-details.service';
 export class AboutTeamComponent implements OnInit {
   teamMembers: PostsInterface[] = [];
 
-  constructor(private teamList: AboutDetailsService) {}
+  constructor(private httpService: AboutDetailsService) {}
 
   ngOnInit(): void {
-    this.teamMembers = this.teamList.teamMembers;
+    this.httpService.getAboutTeamMembers().subscribe(
+      (response: any) => {
+        for (let product of response.data) {
+          this.teamMembers.push(product.attributes);
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

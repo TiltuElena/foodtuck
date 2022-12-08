@@ -1,113 +1,35 @@
 import { Injectable } from '@angular/core';
-import {LinkInterface, PostsInterface} from "@/ts/interfaces";
-import {PageRoutes} from "@/ts/enum";
+import { LinkInterface } from '@/ts/interfaces';
+import { PageRoutes } from '@/ts/enum';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 
 export class LayoutDetailsService {
-  public optionLinks1: PostsInterface[] = [
-    {
-      id: 1,
-      text: 'About',
-    },
-    {
-      id: 2,
-      text: 'News',
-    },
-    {
-      id: 3,
-      text: 'Partners',
-    },
-    {
-      id: 4,
-      text: 'Team',
-    },
-    {
-      id: 5,
-      text: 'Menu',
-    },
-    {
-      id: 6,
-      text: 'Contacts',
-    },
-  ];
+  constructor(private http: HttpClient) {}
+  private optionLinks1Url = 'http://localhost:1337/api/option1-links';
+  private optionLinks2Url = 'http://localhost:1337/api/footer-option2-links';
+  private postsUrl = 'http://localhost:1337/api/footer-posts';
+  private socialMediaUrl = 'http://localhost:1337/api/footer-social-medias';
 
-  public optionLinks2: PostsInterface[] = [
-    {
-      id: 1,
-      text: 'FAQ',
-    },
-    {
-      id: 2,
-      text: 'Term & conditions',
-    },
-    {
-      id: 3,
-      text: 'Reporting',
-    },
-    {
-      id: 4,
-      text: 'Documentation',
-    },
-    {
-      id: 5,
-      text: 'Support Policy',
-    },
-    {
-      id: 6,
-      text: 'Privacy',
-    },
-  ];
+  getOptionLinks1() {
+    return this.http.get(this.optionLinks1Url);
+  }
 
-  public posts: PostsInterface[] = [
-    {
-      id: 1,
-      imgUrl: 'assets/images/footerImg1.png',
-      date: '20 Feb 2022',
-      text: 'Keep Your Business',
-    },
-    {
-      id: 2,
-      imgUrl: 'assets/images/footerImg2.png',
-      date: '20 Feb 2022',
-      text: 'Keep Your Business',
-    },
-    {
-      id: 3,
-      imgUrl: 'assets/images/footerImg3.png',
-      date: '20 Feb 2022',
-      text: 'Keep Your Business',
-    },
-  ];
-  public socialMedias: PostsInterface[] = [
-    {
-      id: 1,
-      imgUrl: 'assets/icons/facebook.png',
-      text: 'https://www.facebook.com/',
-    },
-    {
-      id: 2,
-      imgUrl: 'assets/icons/twitter (2).png',
-      text: 'https://www.twitter.com/',
-    },
-    {
-      id: 3,
-      imgUrl: 'assets/icons/instagram.png',
-      text: 'https://www.instagram.com/',
-    },
-    {
-      id: 4,
-      imgUrl: 'assets/icons/youtube.png',
-      text: 'https://www.youtube.com/',
-    },
-    {
-      id: 5,
-      imgUrl: 'assets/icons/pinterest.png',
-      text: 'https://www.pinterest.com/',
-    },
-  ];
+  getOptionLinks2() {
+    return this.http.get(this.optionLinks2Url);
+  }
+
+  getPosts() {
+    return this.http.get(this.postsUrl);
+  }
+
+  getSocialMedias() {
+    return this.http.get(this.socialMediaUrl);
+  }
+
   readonly links: LinkInterface[] = [
     {
       to: PageRoutes.Home,
@@ -122,5 +44,4 @@ export class LayoutDetailsService {
       text: 'About',
     },
   ];
-  constructor() { }
 }

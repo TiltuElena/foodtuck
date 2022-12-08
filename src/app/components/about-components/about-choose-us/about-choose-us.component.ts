@@ -10,9 +10,18 @@ import { AboutDetailsService } from '../config/about-details.service';
 export class AboutChooseUsComponent implements OnInit {
   items: PostsInterface[] = [];
 
-  constructor(private itemList: AboutDetailsService) {}
+  constructor(private httpService: AboutDetailsService) {}
 
   ngOnInit(): void {
-    this.items = this.itemList.items;
+    this.httpService.getAboutItems().subscribe(
+      (response: any) => {
+        for (let product of response.data) {
+          this.items.push(product.attributes);
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

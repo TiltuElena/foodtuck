@@ -10,9 +10,18 @@ import { HomeDetailsService } from '../config/home-details.service';
 export class OptionsComponent implements OnInit {
   options: PostsInterface[] = [];
 
-  constructor(private optionList: HomeDetailsService) {}
+  constructor(private httpService: HomeDetailsService) {}
 
   ngOnInit(): void {
-    this.options = this.optionList.options;
+    this.httpService.getHomeOptions().subscribe(
+      (response: any) => {
+        for (let product of response.data) {
+          this.options.push(product.attributes);
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

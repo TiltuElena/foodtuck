@@ -14,7 +14,7 @@
     <div class="team-member" *ngFor="let teamMember of teamMembers">
       <figure class="team-member-img"><img [src]="teamMember.imgUrl" alt="chef" /></figure>
       <div class="member-info">
-        <span class="bold-text">{{ teamMember.text }}</span>
+        <span class="bold-text">{{ teamMember.name }}</span>
         <span>{{ teamMember.nr }}</span>
       </div>
     </div>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsInterface } from '@/ts/interfaces';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ProductDetailsService } from '../config/product-details.service';
 
 @Component({
@@ -11,23 +10,19 @@ import { ProductDetailsService } from '../config/product-details.service';
 export class ProductListComponent implements OnInit {
   products: PostsInterface[] = [];
   constructor(
-    private route: ActivatedRoute,
-    private productList: ProductDetailsService
+    private httpService: ProductDetailsService
   ) {}
-  productIds = this.products.map(({ id }) => id);
-  id: number = 0;
 
   ngOnInit(): void {
-    this.products = this.productList.productList;
-    // console.log(this.productIds)
-    // this.route.paramMap.subscribe(data => {
-    //   console.log(data)
-    // this.getProductById( params['id']);
-    // this.id = data['id'];
-    // });
+    this.httpService.getProductList().subscribe(
+      (response: any) => {
+        for (let product of response.data) {
+          this.products.push(product.attributes);
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
-
-  // getProductById(id:number){
-  //   this.productIds.map(i=> {this.id = i; })
-  // }
 }

@@ -11,9 +11,19 @@ export class AboutPartnersComponent implements OnInit {
 
   partners: FormFieldsInterface[] = [];
 
-  constructor(private partnerList: AboutDetailsService) {}
+  constructor(private httpService: AboutDetailsService) {
+  }
 
   ngOnInit(): void {
-    this.partners = this.partnerList.partners;
+    this.httpService.getAboutPartners().subscribe(
+      (response: any) => {
+        for (let product of response.data) {
+          this.partners.push(product.attributes);
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

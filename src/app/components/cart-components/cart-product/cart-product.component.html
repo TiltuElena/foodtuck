@@ -8,8 +8,8 @@
   </div>
   <div class="price">${{ item.price }}</div>
   <div class="cart-quantity">
-    <button (click)="decrease(); getTotal()" >-</button>
-    <span id="count">{{count}}</span>
+    <button (click)="decrease(); getTotal()">-</button>
+    <span id="count">{{ count }}</span>
     <button (click)="increase(); getTotal()">+</button>
   </div>
   <div class="price bold">${{ total }}</div>

@@ -10,9 +10,19 @@ import { HomeDetailsService } from '../config/home-details.service';
 export class ChooseUsComponent implements OnInit {
   icons: PostsInterface[] = [];
 
-  constructor(private iconList: HomeDetailsService) {}
+  constructor(private httpService: HomeDetailsService) {}
 
   ngOnInit(): void {
-    this.icons = this.iconList.icons;
+
+    this.httpService.getHomeIcons().subscribe(
+      (response: any) => {
+        for (let product of response.data) {
+          this.icons.push(product.attributes);
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

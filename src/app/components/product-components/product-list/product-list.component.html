@@ -1,11 +1,10 @@
 <section>
   <div class="product-container">
-    <div
-      *ngFor="let product of products"
-      class="product"
-      [routerLink]="['/menu', id]"
-    >
-      <app-product-detail [product]="product"></app-product-detail>
+    <div *ngFor="let product of products" class="product">
+      <app-product-detail
+        [product]="product"
+        [routerLink]="'/menu/' + product.index"
+      ></app-product-detail>
     </div>
   </div>
   <div class="menu-navigation">

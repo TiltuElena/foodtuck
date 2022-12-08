@@ -2,16 +2,19 @@
   <div class="text">
     <div class="header-text"><span class="yellow">Wh</span>y Choose us</div>
     <div class="paragraph-text">
-    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam</span>
-     <span>pellentesque bibendum non dui volutpat fringilla bibendum.</span>
+      <span
+        >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+        diam</span
+      >
+      <span>pellentesque bibendum non dui volutpat fringilla bibendum.</span>
     </div>
   </div>
-  <img src="assets/images/bg4.png" alt="bg-img">
+  <img src="assets/images/bg4.png" alt="bg-img" />
   <div class="options">
     <div class="option" *ngFor="let item of items">
-      <img [src]="item.imgUrl" alt="option">
-      <div class="option-title">{{item.text}}</div>
-      <div class="option-text">{{item.nr}}</div>
+      <img [src]="item.imgUrl" alt="option" />
+      <div class="option-title">{{ item.name }}</div>
+      <div class="option-text">{{ item.text }}</div>
     </div>
   </div>
 </section>

@@ -12,9 +12,18 @@ export class AboutMenuComponent implements OnInit {
   menuLink = PageRoutes.Menu;
   menuItems: PostsInterface[] = [];
 
-  constructor(private menuList: AboutDetailsService) {}
+  constructor(private httpService: AboutDetailsService) {}
 
   ngOnInit(): void {
-    this.menuItems = this.menuList.menuItems;
+    this.httpService.getAboutMenuItems().subscribe(
+      (response: any) => {
+        for (let product of response.data) {
+          this.menuItems.push(product.attributes);
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

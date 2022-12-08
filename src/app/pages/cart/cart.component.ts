@@ -15,7 +15,7 @@ import { CartDetailsService } from '@/components/cart-components/config/cart-det
 export class CartComponent implements OnInit {
   public products: PostsInterface[] = [];
   cartTotal: number = 0;
-  shipping: number = 5.15;
+  shipping: number = 0;
   total: number = 0;
 
   getTotalPrice(totalPrice: string) {
@@ -27,8 +27,24 @@ export class CartComponent implements OnInit {
     }
   }
 
-  constructor(private productList: CartDetailsService) {}
+  constructor(
+    private productList: CartDetailsService,
+    private httpService: CartDetailsService,
+    private shippingPrice: CartDetailsService
+  ) {}
+
   ngOnInit() {
-    this.products = this.productList.products;
+    this.shipping = this.shippingPrice.shipping;
+
+    this.httpService.getPosts().subscribe(
+      (response: any) => {
+        for (let product of response.data) {
+          this.products.push(product.attributes);
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

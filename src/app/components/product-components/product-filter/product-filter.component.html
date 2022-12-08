@@ -35,9 +35,9 @@
     <div class="product" *ngFor="let product of products">
       <img [src]="product.imgUrl" alt="food" />
       <div class="product-details">
-        <div>{{ product.date }}</div>
+        <div>{{ product.name }}</div>
         <img src="assets/icons/stars.png" alt="stars" class="stars" />
-        <div>{{ product.text }}</div>
+        <div>{{ product.price }}</div>
       </div>
     </div>
   </div>

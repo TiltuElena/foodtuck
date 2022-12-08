@@ -13,17 +13,51 @@ export class FooterComponent implements OnInit {
   posts: PostsInterface[] = [];
   socialMedias: PostsInterface[] = [];
 
-  constructor(
-    private optionList1: LayoutDetailsService,
-    private optionList2: LayoutDetailsService,
-    private postList: LayoutDetailsService,
-    private socialMediaList: LayoutDetailsService
-  ) {}
+  constructor(private httpService: LayoutDetailsService) {}
 
   ngOnInit(): void {
-    this.optionLinks1 = this.optionList1.optionLinks1;
-    this.optionLinks2 = this.optionList2.optionLinks2;
-    this.posts = this.postList.posts;
-    this.socialMedias = this.socialMediaList.socialMedias;
+    this.httpService.getOptionLinks1().subscribe(
+      (response: any) => {
+        for (let product of response.data) {
+          this.optionLinks1.push(product.attributes);
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+
+    this.httpService.getOptionLinks2().subscribe(
+      (response: any) => {
+        for (let product of response.data) {
+          this.optionLinks2.push(product.attributes);
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+
+    this.httpService.getPosts().subscribe(
+      (response: any) => {
+        for (let product of response.data) {
+          this.posts.push(product.attributes);
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+
+    this.httpService.getSocialMedias().subscribe(
+      (response: any) => {
+        for (let product of response.data) {
+          this.socialMedias.push(product.attributes);
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }
