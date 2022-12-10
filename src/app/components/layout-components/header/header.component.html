@@ -19,12 +19,21 @@
       <img src="assets/icons/searchIcon.png" alt="search" id="searchIcon" />
     </div>
     <div class="nav-icons">
-      <span [routerLink]="LoginUrl()" class="navIcon"
+      <span
+        [routerLink]="LoginUrl()"
+        routerLinkActive="link--active2"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="navIcon"
         ><img src="assets/icons/userIcon.png" alt="user" />
       </span>
-      <span [routerLink]="CardUrl()" class="navIcon"
-        ><img src="assets/icons/shopIcon.png" alt="shop"
-      /></span>
+      <span
+        [routerLink]="CardUrl()"
+        routerLinkActive="link--active2"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="navIcon cart-icon"
+        ><img src="assets/icons/shopIcon.png" alt="shop" />
+        <div class="cart-total">{{ count }}</div>
+      </span>
     </div>
   </div>
 </nav>

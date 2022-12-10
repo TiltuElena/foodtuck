@@ -1,4 +1,10 @@
-<section>
+<ng-template #elseBlock>
+  <div class="empty-cart">
+    <h2>Your cart is empty</h2>
+    <button [routerLink]="menu">Shop now!</button>
+  </div>
+</ng-template>
+<section *ngIf="products.length > 0; else elseBlock">
   <div class="cart-category">
     <span>Product</span>
     <span>Price</span>
@@ -7,10 +13,7 @@
     <span>Remove</span>
   </div>
   <div *ngFor="let product of products">
-    <app-cart-product
-      [item]="product"
-      (totalPrice)="getTotalPrice($event)"
-    ></app-cart-product>
+    <app-cart-product [item]="product"></app-cart-product>
   </div>
   <div class="bill">
     <div class="bill-left">
@@ -31,7 +34,7 @@
       <div class="external-container">
         <div>
           <div class="text-special bold price-container price-container-bold">
-            <span>Cart Subtotal</span><span>${{ cartTotal }}</span>
+            <span>Cart Subtotal</span><span>${{ totalPrice }}</span>
           </div>
           <div class="text price-container">
             <span>Shipping Charge</span><span>${{ shipping }}</span>
@@ -39,7 +42,7 @@
         </div>
         <hr />
         <div class="text-special bold price-container price-container-bold">
-          <span>Total Amount</span><span>${{ total }}</span>
+          <span>Total Amount</span><span>${{ totalPriceWithShipping }}</span>
         </div>
       </div>
       <button>

@@ -4,7 +4,6 @@ import { AppComponent } from './app.component';
 import { BaseRoutingModule } from './router/base-routing.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { MatIconModule } from '@angular/material';
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,7 +11,6 @@ import { MatIconModule } from '@angular/material';
     BrowserModule,
     BaseRoutingModule,
     RouterModule,
-    MatIconModule,
     HttpClientModule,
   ],
   providers: [],

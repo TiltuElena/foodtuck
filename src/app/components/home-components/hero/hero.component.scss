@@ -93,6 +93,7 @@ section {
   border: none;
   font-size: 0.9vw;
   min-width: 70px;
+  transition: ease-in-out 0.2s;
 
   &:hover {
     opacity: 0.9;

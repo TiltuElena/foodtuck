@@ -4,6 +4,7 @@ import { FormFieldsInterface, PostsInterface } from '@/ts/interfaces';
 import { ActivatedRoute } from '@angular/router';
 import { ProductDetailsService } from '@/components/product-components/config/product-details.service';
 import { RouterLink, Router } from '@angular/router';
+import { CartDetailsService } from '@/components/cart-components/config/cart-details.service';
 
 @Component({
   selector: 'app-product',
@@ -13,32 +14,20 @@ import { RouterLink, Router } from '@angular/router';
   styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent implements OnInit {
-  images: FormFieldsInterface[] = [
-    {
-      id: 1,
-      imgUrl: 'assets/images/imgS1.png',
-    },
-    {
-      id: 2,
-      imgUrl: 'assets/images/imgS2.png',
-    },
-    {
-      id: 3,
-      imgUrl: 'assets/images/imgS3.png',
-    },
-    {
-      id: 4,
-      imgUrl: 'assets/images/imgS4.png',
-    },
-  ];
+  images: FormFieldsInterface[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private httpService: ProductDetailsService,
-    private router: Router
+    private router: Router,
+    private prop: ProductDetailsService,
+    private cartService: CartDetailsService
   ) {}
 
   ngOnInit(): void {
+    this.count = this.prop.count;
+    this.images = this.prop.images;
+
     this.route.params.subscribe((params) => {
       this.getProductById(params['id']);
     });
@@ -55,6 +44,11 @@ export class ProductComponent implements OnInit {
     );
   }
 
+  addToCart(product: any, count: number) {
+    this.cartService.addToCart(product, count);
+    this.cartService.addToLocalStorage();
+  }
+
   getProductById(id: number) {
     this.httpService.getProductById(id).subscribe((data: any) => {
       this.product = data.data.attributes;
@@ -62,9 +56,9 @@ export class ProductComponent implements OnInit {
   }
 
   disabled: boolean = false;
-  count: number = 0;
   product: any = [];
   products: any = [];
+  count: number = 0;
 
   decrease() {
     if (Number(this.count) === 0) {
@@ -85,7 +79,8 @@ export class ProductComponent implements OnInit {
     } else {
       this.product.index = 1;
     }
-    this.router.navigate(['/menu/' + this.product.index]);
+    this.router.navigate(['/menu/' + this.product.index]).then();
+    this.count = 0;
   }
 
   showPreviousProduct() {
@@ -94,6 +89,7 @@ export class ProductComponent implements OnInit {
     } else {
       this.product.index = this.products.length;
     }
-    this.router.navigate(['/menu/' + this.product.index]);
+    this.router.navigate(['/menu/' + this.product.index]).then();
+    this.count = 0;
   }
 }

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { FormFieldsInterface, PostsInterface } from '@/ts/interfaces';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({

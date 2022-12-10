@@ -59,6 +59,7 @@ section {
   color: styles.$white-base;
   font-size: 1vw;
   min-width: 70px;
+  transition: ease-in-out 0.3s;
 
   &:hover {
     opacity: 0.9;

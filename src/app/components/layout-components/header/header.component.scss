@@ -26,6 +26,7 @@
     padding: 8px;
     cursor: pointer;
     font-size: calc(8px + 0.7vw);
+    transition: ease-in-out 0.3s;
 
     &:hover {
       color: styles.$yellow-base;
@@ -36,6 +37,10 @@
 .link--active {
   font-weight: bold;
   color: styles.$yellow-base;
+}
+
+.link--active2 {
+  background: styles.$yellow-base;
 }
 
 .header {
@@ -94,9 +99,31 @@
 
     .navIcon {
       cursor: pointer;
+      padding: 5px;
+      border-radius: 7px;
+      transition: ease-out 0.5s;
+
       &:hover {
-        opacity: 0.8;
+        background: styles.$gray-base;
       }
     }
   }
+}
+
+.cart-icon{
+  position: relative;
+}
+
+.cart-total{
+  background: red;
+  min-width: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-size: 12px;
+  padding: 3px;
+  border-radius: 7px;
+  top: -7px;
+  right: -8px;
 }

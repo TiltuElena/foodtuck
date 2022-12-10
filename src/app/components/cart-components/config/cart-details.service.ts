@@ -1,4 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -6,11 +6,52 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CartDetailsService {
   constructor(private http: HttpClient) {}
-  private url = 'http://localhost:1337/api/products';
   public shipping: number = 5.15;
 
-  getPosts() {
-    return this.http.get(this.url);
+  items: any = [];
+  localStorageData: any;
+  pastItems: any = JSON.parse(localStorage.getItem('cartProducts')!);
+
+  initializeCart(): any {
+    if (this.pastItems) {
+      for (let item of this.pastItems) {
+        this.items.push(item);
+      }
+      return this.items;
+    }
+  }
+
+  addToCart(product: any, count: number) {
+    this.initializeCart();
+    for (let item of this.items) {
+      if (item.index === product.index) {
+        item.quantity += count;
+        return
+      }
+    }
+    this.updateQuantity(product, count);
+    return this.items.push(product);
+  }
+
+  addToLocalStorage() {
+    localStorage.setItem('cartProducts', JSON.stringify(this.items));
+  }
+
+  updateQuantity(product: any, count: number) {
+    for (let item of this.items) {
+      if (item.index === product.index) {
+        item.quantity = count;
+      }
+    }
+    product.quantity = count;
+    this.addToLocalStorage();
+  }
+
+  get getCartQuantity() {
+    this.localStorageData = JSON.parse(localStorage.getItem('cartProducts')!);
+    if (this.localStorageData) {
+      return this.localStorageData.length;
+    }
   }
 
   ngOnInit(): void {}
