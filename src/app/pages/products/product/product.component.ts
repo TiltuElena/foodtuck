@@ -45,8 +45,11 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(product: any, count: number) {
-    this.cartService.addToCart(product, count);
-    this.cartService.addToLocalStorage();
+    if(this.count !== 0){
+      this.cartService.addToCart(product, count);
+      this.cartService.addToLocalStorage();
+      this.count = 0;
+    }
   }
 
   getProductById(id: number) {

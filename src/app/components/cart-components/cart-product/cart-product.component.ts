@@ -29,16 +29,20 @@ export class CartProductComponent implements OnInit {
       this.disabled = true;
     } else {
       this.count = this.count - 1;
-      this.cartService.updateQuantity(this.item, this.count)
+      this.cartService.updateQuantity(this.item, this.count);
       this.total = Number(this.total) - Number(this.item.nr);
       this.intermediary = -this.item.nr;
+    }
+    if (this.count < 1){
+      this.cartService.removeFromCart(this.item);
+      window.location.reload();
     }
   }
 
   increase() {
     this.disabled = false;
     this.count = this.count + 1;
-    this.cartService.updateQuantity(this.item, this.count)
+    this.cartService.updateQuantity(this.item, this.count);
     this.total = Number(this.item.nr) + Number(this.total);
     this.intermediary = this.item.nr;
   }
@@ -47,5 +51,10 @@ export class CartProductComponent implements OnInit {
     if (!this.disabled) {
       this.totalPrice.emit(this.intermediary);
     }
+  }
+
+  removeItem() {
+    this.cartService.removeFromCart(this.item);
+    window.location.reload();
   }
 }

@@ -33,6 +33,18 @@ export class CartDetailsService {
     return this.items.push(product);
   }
 
+  removeFromCart(product: any){
+    document.getElementById('product')!.remove();
+    const id: number = this.items.indexOf(product);
+    console.log(id+1)
+    this.items.forEach((item: any, index: number) => {
+      if (item.index === product.index) {
+        this.items.splice(id+1, 1)
+      }
+    })
+    this.addToLocalStorage()
+  }
+
   addToLocalStorage() {
     localStorage.setItem('cartProducts', JSON.stringify(this.items));
   }

@@ -1,23 +1,27 @@
-<div class="cart-product">
-  <div class="cart-product-img">
-    <img [src]="item.imgUrl" alt="food" class="cart-img-mainImg" />
-    <div class="cart-product-img-details">
-      <div>{{ item.name }}</div>
-      <img src="assets/icons/lessStarIcon.png" alt="stars" />
-<!--      [src]="item.reviewStar"-->
+<div id="product">
+  <div class="cart-product">
+    <div class="cart-product-img">
+      <img [src]="item.imgUrl" alt="food" class="cart-img-mainImg" />
+      <div class="cart-product-img-details">
+        <div>{{ item.name }}</div>
+        <img src="assets/icons/lessStarIcon.png" alt="stars" />
+        <!--      [src]="item.reviewStar"-->
+      </div>
+    </div>
+    <div class="price">${{ item.nr }}</div>
+    <div class="cart-quantity">
+      <button (click)="decrease(); getTotal()">-</button>
+      <span id="count">{{ count }}</span>
+      <button (click)="increase(); getTotal()">+</button>
+    </div>
+    <div class="price bold">${{ total }}</div>
+    <div (click)="removeItem()">
+      <img
+        src="assets/icons/cancel-icon-transparent-3.jpg"
+        alt="x"
+        class="delete-icon"
+      />
     </div>
   </div>
-  <div class="price">${{ item.nr}}</div>
-  <div class="cart-quantity">
-    <button (click)="decrease(); getTotal()">-</button>
-    <span id="count">{{ count }}</span>
-    <button (click)="increase(); getTotal()">+</button>
-  </div>
-  <div class="price bold">${{ total }}</div>
-  <div><img
-    src="assets/icons/cancel-icon-transparent-3.jpg"
-    alt="x"
-    class="delete-icon"
-  /></div>
+  <hr />
 </div>
-<hr />
