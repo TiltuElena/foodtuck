@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormFieldsInterface, PostsInterface } from '@/ts/interfaces';
+import { FormFieldsInterface} from '@/ts/interfaces';
 import { ActivatedRoute } from '@angular/router';
 import { ProductDetailsService } from '@/components/product-components/config/product-details.service';
 import { RouterLink, Router } from '@angular/router';

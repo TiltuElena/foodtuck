@@ -55,6 +55,8 @@ export class CartProductComponent implements OnInit {
 
   removeItem() {
     this.cartService.removeFromCart(this.item);
-    window.location.reload();
+    if(this.cartService.items.length < 1){
+      window.location.reload();
+    }
   }
 }

@@ -24,7 +24,7 @@ export class CartDetailsService {
   addToCart(product: any, count: number) {
     this.initializeCart();
     for (let item of this.items) {
-      if (item.index === product.index) {
+      if (item.name === product.name) {
         item.quantity += count;
         return
       }
@@ -35,11 +35,9 @@ export class CartDetailsService {
 
   removeFromCart(product: any){
     document.getElementById('product')!.remove();
-    const id: number = this.items.indexOf(product);
-    console.log(id+1)
-    this.items.forEach((item: any, index: number) => {
+    this.items.forEach((item: any) => {
       if (item.index === product.index) {
-        this.items.splice(id+1, 1)
+        this.items.splice(this.items.indexOf(product)+1, 1)
       }
     })
     this.addToLocalStorage()

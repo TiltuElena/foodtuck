@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PostsInterface } from '@/ts/interfaces';
 import { CartComponentsModule } from '@/components/cart-components/cart-components.module';
 import { CartDetailsService } from '@/components/cart-components/config/cart-details.service';
 import { PageRoutes } from '@/ts/enum';
@@ -39,9 +38,9 @@ export class CartComponent implements OnInit {
     return this.totalPrice + this.shipping;
   }
 
-  // removeProduct(product: any){
-  //   this.products.splice(product.index, 1)
-  // }
+  finishOrder(){
+    alert(`Your order is ready! Total price: $${this.totalPriceWithShipping}`)
+  }
 
   ngOnInit() {
     this.shipping = this.productList.shipping;
