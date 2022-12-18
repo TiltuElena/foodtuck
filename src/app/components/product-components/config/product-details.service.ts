@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {FormFieldsInterface} from "@/ts/interfaces";
+import { FormFieldsInterface } from '@/ts/interfaces';
 
 @Injectable({
   providedIn: 'root',
 })
-
 export class ProductDetailsService {
   constructor(private http: HttpClient) {}
 
@@ -14,7 +13,7 @@ export class ProductDetailsService {
   private productUrl: string =
     'http://localhost:1337/api/product-filter-products';
   private productListUrl: string = 'http://localhost:1337/api/product-lists';
-  public count: number = 0;
+  public count: number = 1;
 
   getProductCategories() {
     return this.http.get(this.categoriesUrl);

@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
   //count: number = this.cartService.getCartQuantity || 0;
 
   countProducts() {
-    return this.cartService.getCartQuantity || 0;
+    return this.cartService.CartQuantity || 0;
   }
 
   CardUrl(): string {

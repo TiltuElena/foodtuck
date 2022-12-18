@@ -35,7 +35,6 @@ export class CartProductComponent implements OnInit {
     }
     if (this.count < 1){
       this.cartService.removeFromCart(this.item);
-      window.location.reload();
     }
   }
 
@@ -55,8 +54,6 @@ export class CartProductComponent implements OnInit {
 
   removeItem() {
     this.cartService.removeFromCart(this.item);
-    if(this.cartService.items.length < 1){
-      window.location.reload();
-    }
+   // window.location.reload();
   }
 }

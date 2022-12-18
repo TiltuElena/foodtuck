@@ -45,11 +45,8 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(product: any, count: number) {
-    if(this.count !== 0){
       this.cartService.addToCart(product, count);
-      this.cartService.addToLocalStorage();
-      this.count = 0;
-    }
+      this.count = 1;
   }
 
   getProductById(id: number) {
@@ -61,10 +58,10 @@ export class ProductComponent implements OnInit {
   disabled: boolean = false;
   product: any = [];
   products: any = [];
-  count: number = 0;
+  count: number = 1;
 
   decrease() {
-    if (Number(this.count) === 0) {
+    if (Number(this.count) === 1) {
       this.disabled = true;
     } else {
       this.count = this.count - 1;
@@ -83,7 +80,7 @@ export class ProductComponent implements OnInit {
       this.product.index = 1;
     }
     this.router.navigate(['/menu/' + this.product.index]).then();
-    this.count = 0;
+    this.count = 1;
   }
 
   showPreviousProduct() {
@@ -93,6 +90,6 @@ export class ProductComponent implements OnInit {
       this.product.index = this.products.length;
     }
     this.router.navigate(['/menu/' + this.product.index]).then();
-    this.count = 0;
+    this.count = 1;
   }
 }

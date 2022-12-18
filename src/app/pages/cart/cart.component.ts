@@ -18,8 +18,7 @@ export class CartComponent implements OnInit {
   shipping: number = 0;
   total: number = 0;
   menu = PageRoutes.Menu;
-  public products: any =
-    JSON.parse(localStorage.getItem('cartProducts')!) || [];
+  public products: any = JSON.parse(localStorage.getItem('cartProducts')!) || [];
 
   constructor(private productList: CartDetailsService) {}
 
@@ -44,6 +43,5 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     this.shipping = this.productList.shipping;
-    this.productList.initializeCart();
   }
 }

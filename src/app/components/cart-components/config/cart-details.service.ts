@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
+import {logMessages} from "@angular-devkit/build-angular/src/builders/browser-esbuild/esbuild";
 
 @Injectable({
   providedIn: 'root',
@@ -8,39 +10,35 @@ export class CartDetailsService {
   constructor(private http: HttpClient) {}
   public shipping: number = 5.15;
 
-  items: any = [];
-  localStorageData: any;
-  pastItems: any = JSON.parse(localStorage.getItem('cartProducts')!);
+  items: any = [...JSON.parse(localStorage.getItem('cartProducts')!)];
+  productList = new BehaviorSubject<any>([]);
 
-  initializeCart(): any {
-    if (this.pastItems) {
-      for (let item of this.pastItems) {
-        this.items.push(item);
-      }
-      return this.items;
-    }
+  getProducts() {
+    return this.productList.asObservable();
   }
 
   addToCart(product: any, count: number) {
-    this.initializeCart();
     for (let item of this.items) {
       if (item.name === product.name) {
         item.quantity += count;
-        return
+        return;
       }
     }
     this.updateQuantity(product, count);
-    return this.items.push(product);
+    this.items.push(product);
+    this.productList.next(this.items);
+    this.addToLocalStorage();
+    //return this.items.push(product);
   }
 
-  removeFromCart(product: any){
-    document.getElementById('product')!.remove();
-    this.items.forEach((item: any) => {
+  removeFromCart(product: any) {
+    this.items.forEach((item: any, index: any) => {
       if (item.index === product.index) {
-        this.items.splice(this.items.indexOf(product)+1, 1)
+        this.items.splice(index, 1);
       }
-    })
-    this.addToLocalStorage()
+    });
+    this.productList.next(this.items);
+    this.addToLocalStorage();
   }
 
   addToLocalStorage() {
@@ -57,11 +55,8 @@ export class CartDetailsService {
     this.addToLocalStorage();
   }
 
-  get getCartQuantity() {
-    this.localStorageData = JSON.parse(localStorage.getItem('cartProducts')!);
-    if (this.localStorageData) {
-      return this.localStorageData.length;
-    }
+  get CartQuantity() {
+    return JSON.parse(localStorage.getItem('cartProducts')!).length;
   }
 
   ngOnInit(): void {}
