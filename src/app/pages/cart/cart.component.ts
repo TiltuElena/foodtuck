@@ -4,6 +4,7 @@ import { CartComponentsModule } from '@/components/cart-components/cart-componen
 import { CartDetailsService } from '@/components/cart-components/config/cart-details.service';
 import { PageRoutes } from '@/ts/enum';
 import { RouterLink } from '@angular/router';
+import {BehaviorSubject} from "rxjs";
 
 @Component({
   selector: 'app-cart',
@@ -18,9 +19,9 @@ export class CartComponent implements OnInit {
   shipping: number = 0;
   total: number = 0;
   menu = PageRoutes.Menu;
-  public products: any = JSON.parse(localStorage.getItem('cartProducts')!) || [];
-
+  //public products: any = JSON.parse(localStorage.getItem('cartProducts')!) || [];
   constructor(private productList: CartDetailsService) {}
+  products: any = this.productList.getProducts();
 
   get totalPrice() {
     return this.products.reduce(
