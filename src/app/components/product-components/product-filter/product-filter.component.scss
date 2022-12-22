@@ -154,6 +154,7 @@ label {
   input[type="range"] {
     accent-color: styles.$yellow-base;
     cursor: pointer;
+    transition: ease-in-out;
   }
 }
 

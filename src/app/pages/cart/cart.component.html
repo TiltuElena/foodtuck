@@ -1,9 +1,3 @@
-<ng-template #elseBlock>
-  <div class="empty-cart">
-    <h2>Your cart is empty</h2>
-    <button [routerLink]="menu">Shop now!</button>
-  </div>
-</ng-template>
 <section *ngIf="products.length > 0; else elseBlock">
   <div class="cart-category">
     <span>Product</span>
@@ -12,7 +6,7 @@
     <span>Total</span>
     <span>Remove</span>
   </div>
-  <div *ngFor="let product of products ">
+  <div *ngFor="let product of cartDetail.items$ | async">
     <app-cart-product [item]="product"></app-cart-product>
   </div>
   <div class="bill">
@@ -52,3 +46,9 @@
     </div>
   </div>
 </section>
+<ng-template #elseBlock>
+  <div class="empty-cart">
+    <h2>Your cart is empty</h2>
+    <button [routerLink]="menu">Shop now!</button>
+  </div>
+</ng-template>

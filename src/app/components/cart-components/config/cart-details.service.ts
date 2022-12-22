@@ -1,55 +1,71 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartDetailsService {
-  constructor() {}
-  public shipping: number = 5.15;
-  items: any = [...JSON.parse(localStorage.getItem('cartProducts')!)];
+  constructor() {
+    let items: any = localStorage.getItem('cartProducts');
 
-  getProducts() {
-    return this.items;
+    if (items) {
+      this.items$ = new BehaviorSubject(JSON.parse(items));
+    }
   }
+
+  public shipping: number = 5.15;
+  public items$: any = new Subject();
 
   addToCart(product: any, count: number) {
-    for (let item of this.items) {
-      if (item.index === product.index) {
-        item.quantity += count;
-        this.addToLocalStorage();
-        return;
-      }
+    let items: any = localStorage.getItem('cartProducts') || [];
+    const newItem: any = product;
+    newItem.quantity = count;
+
+    if (items) {
+      items = JSON.parse(localStorage.getItem('cartProducts') || '[]');
     }
-    this.updateQuantity(product, count);
-    this.items.push(product);
-    this.addToLocalStorage();
-  }
 
-  removeFromCart(product: any) {
-    this.items.forEach((item: any, index: any) => {
-      if (item.index === product.index) {
-        this.items.splice(index, 1);
-      }
-    });
-    this.addToLocalStorage();
-  }
-
-  addToLocalStorage() {
-    localStorage.setItem('cartProducts', JSON.stringify(this.items));
+    if (!items.some((item: any) => {return item.index === product.index})) {
+      localStorage.setItem('cartProducts', JSON.stringify([...items, newItem]));
+      this.items$.next([...items, newItem]);
+    }
   }
 
   updateQuantity(product: any, count: number) {
-    for (let item of this.items) {
-      if (item.index === product.index) {
-        item.quantity = count;
-      }
-    }
     product.quantity = count;
-    this.addToLocalStorage();
+    let items: any = localStorage.getItem('cartProducts') || [];
+
+    if (items) {
+      items = JSON.parse(localStorage.getItem('cartProducts') || '[]');
+    }
+
+    items.forEach((prod: any) => {
+      if (prod.index === product.index) {
+        prod.quantity = count;
+      }
+    });
+
+    localStorage.setItem('cartProducts', JSON.stringify([...items]));
+  }
+
+  removeFromCart(product: any) {
+    let items: any = localStorage.getItem('cartProducts') || [];
+    if (items) {
+      items = JSON.parse(localStorage.getItem('cartProducts') || '[]');
+    }
+
+    items.forEach((item: any, index: any) => {
+      if (item.index === product.index) {
+        items.splice(index, 1);
+      }
+    });
+
+    localStorage.setItem('cartProducts', JSON.stringify([...items]));
+    this.items$.next([...items]);
   }
 
   get CartQuantity() {
-    return JSON.parse(localStorage.getItem('cartProducts')!).length;
+    return JSON.parse(localStorage.getItem('cartProducts') || '[]').length;
   }
 
   ngOnInit(): void {}

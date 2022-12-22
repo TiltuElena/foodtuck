@@ -13,6 +13,7 @@ import { CartDetailsService } from '@/components/cart-components/config/cart-det
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss'],
 })
+
 export class ProductComponent implements OnInit {
   images: FormFieldsInterface[] = [];
 
@@ -37,9 +38,6 @@ export class ProductComponent implements OnInit {
         for (let product of response.data) {
           this.products.push(product);
         }
-      },
-      (error) => {
-        console.log(error);
       }
     );
   }

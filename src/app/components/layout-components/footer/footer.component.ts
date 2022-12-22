@@ -15,49 +15,33 @@ export class FooterComponent implements OnInit {
 
   constructor(private httpService: LayoutDetailsService) {}
 
+  // catchError(e: any) {
+  //   console.log(e);
+  // }
+
   ngOnInit(): void {
-    this.httpService.getOptionLinks1().subscribe(
-      (response: any) => {
-        for (let product of response.data) {
-          this.optionLinks1.push(product.attributes);
-        }
-      },
-      (error) => {
-        console.log(error);
+    this.httpService.getOptionLinks1().subscribe((response: any) => {
+      for (let product of response.data) {
+        this.optionLinks1.push(product.attributes);
       }
-    );
+    });
 
-    this.httpService.getOptionLinks2().subscribe(
-      (response: any) => {
-        for (let product of response.data) {
-          this.optionLinks2.push(product.attributes);
-        }
-      },
-      (error) => {
-        console.log(error);
+    this.httpService.getOptionLinks2().subscribe((response: any) => {
+      for (let product of response.data) {
+        this.optionLinks2.push(product.attributes);
       }
-    );
+    });
 
-    this.httpService.getPosts().subscribe(
-      (response: any) => {
-        for (let product of response.data) {
-          this.posts.push(product.attributes);
-        }
-      },
-      (error) => {
-        console.log(error);
+    this.httpService.getPosts().subscribe((response: any) => {
+      for (let product of response.data) {
+        this.posts.push(product.attributes);
       }
-    );
+    });
 
-    this.httpService.getSocialMedias().subscribe(
-      (response: any) => {
-        for (let product of response.data) {
-          this.socialMedias.push(product.attributes);
-        }
-      },
-      (error) => {
-        console.log(error);
+    this.httpService.getSocialMedias().subscribe((response: any) => {
+      for (let product of response.data) {
+        this.socialMedias.push(product.attributes);
       }
-    );
+    });
   }
 }

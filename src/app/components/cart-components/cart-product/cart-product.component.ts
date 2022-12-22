@@ -54,6 +54,5 @@ export class CartProductComponent implements OnInit {
 
   removeItem() {
     this.cartService.removeFromCart(this.item);
-   // window.location.reload();
   }
 }

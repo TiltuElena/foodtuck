@@ -4,7 +4,6 @@ import { CartComponentsModule } from '@/components/cart-components/cart-componen
 import { CartDetailsService } from '@/components/cart-components/config/cart-details.service';
 import { PageRoutes } from '@/ts/enum';
 import { RouterLink } from '@angular/router';
-import {BehaviorSubject} from "rxjs";
 
 @Component({
   selector: 'app-cart',
@@ -14,14 +13,20 @@ import {BehaviorSubject} from "rxjs";
   styleUrls: ['./cart.component.scss'],
   providers: [CartDetailsService],
 })
+
 export class CartComponent implements OnInit {
   cartTotal: number = 0;
   shipping: number = 0;
   total: number = 0;
   menu = PageRoutes.Menu;
-  //public products: any = JSON.parse(localStorage.getItem('cartProducts')!) || [];
-  constructor(private productList: CartDetailsService) {}
-  products: any = this.productList.getProducts();
+  products: any = [];
+
+  constructor(public cartDetail: CartDetailsService) {
+    this.cartDetail.items$
+      .subscribe((product: any) => {
+        this.products = [...product];
+      });
+  }
 
   get totalPrice() {
     return this.products.reduce(
@@ -38,11 +43,11 @@ export class CartComponent implements OnInit {
     return this.totalPrice + this.shipping;
   }
 
-  finishOrder(){
-    alert(`Your order is ready! Total price: $${this.totalPriceWithShipping}`)
+  finishOrder() {
+    alert(`Your order is ready! Total price: $${this.totalPriceWithShipping}`);
   }
 
   ngOnInit() {
-    this.shipping = this.productList.shipping;
+    this.shipping = this.cartDetail.shipping;
   }
 }

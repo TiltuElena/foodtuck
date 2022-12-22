@@ -32,7 +32,7 @@
         [routerLinkActiveOptions]="{ exact: true }"
         class="navIcon cart-icon"
         ><img src="assets/icons/shopIcon.png" alt="shop" />
-        <div class="cart-total">{{  countProducts() }}</div>
+        <div class="cart-total">{{ cartService.CartQuantity }}</div>
       </span>
     </div>
   </div>
