@@ -13,16 +13,10 @@ export class ChooseUsComponent implements OnInit {
   constructor(private httpService: HomeDetailsService) {}
 
   ngOnInit(): void {
-
-    this.httpService.getHomeIcons().subscribe(
-      (response: any) => {
-        for (let product of response.data) {
-          this.icons.push(product.attributes);
-        }
-      },
-      (error) => {
-        console.log(error);
+    this.httpService.getHomeIcons().subscribe((response: any) => {
+      for (let product of response.data) {
+        this.icons.push(product.attributes);
       }
-    );
+    });
   }
 }
