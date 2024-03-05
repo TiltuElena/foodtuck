@@ -10,7 +10,7 @@ export class CartProductComponent implements OnInit {
   @Output() totalPrice = new EventEmitter<any>();
   @Input() item: any;
 
-  total: number = 0;
+  total: any = 0;
   intermediary: number = 0;
   disabled: boolean = false;
   count: number = 0;
@@ -19,7 +19,10 @@ export class CartProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.count = this.item.quantity;
-    this.total = this.item.quantity * this.item.nr;
+    console.log(this.item.quantity)
+    // let price = parseFloat(this.item.nr.replace('$', ''))
+    this.total = this.item.quantity *  parseFloat(this.item.nr);
+    console.log(this.item.nr)
     this.intermediary = this.total;
     this.getTotal();
   }

@@ -3,7 +3,6 @@ import { LinkInterface } from '@/ts/interfaces';
 import { PageRoutes } from '@/ts/enum';
 import { LayoutDetailsService } from '../config/layout-details.service';
 import { CartDetailsService } from '@/components/cart-components/config/cart-details.service';
-import {share} from "rxjs";
 
 @Component({
   selector: 'app-header',
@@ -30,9 +29,5 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.links = this.linkList.links;
-
-    // this.cartService.items$.pipe(share()).subscribe((items:any) => {
-    //   this.total = [...items].length
-    // })
   }
 }

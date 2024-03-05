@@ -25,7 +25,7 @@ export class CartDetailsService {
       items = JSON.parse(localStorage.getItem('cartProducts') || '[]');
     }
 
-    if (!items.some((item: any) => {return item.index === product.index})) {
+    if (!items.some((item: any) => {return item.id === product.id})) {
       localStorage.setItem('cartProducts', JSON.stringify([...items, newItem]));
       this.items$.next([...items, newItem]);
     }
@@ -40,7 +40,7 @@ export class CartDetailsService {
     }
 
     items.forEach((prod: any) => {
-      if (prod.index === product.index) {
+      if (prod.id === product.id) {
         prod.quantity = count;
       }
     });
@@ -55,7 +55,7 @@ export class CartDetailsService {
     }
 
     items.forEach((item: any, index: any) => {
-      if (item.index === product.index) {
+      if (item.id === product.id) {
         items.splice(index, 1);
       }
     });
