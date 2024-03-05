@@ -53,7 +53,7 @@ export class ProductComponent implements OnInit {
       id: 2,
       imgUrl: 'assets/images/menuImg2.png',
       text: 'Chocolate muffin',
-      nr: '28.00',
+      nr: 28,
     },
     {
       id: 3,
@@ -72,7 +72,7 @@ export class ProductComponent implements OnInit {
       id: 5,
       imgUrl: 'assets/images/menuImg5.png',
       text: 'Drink',
-      nr: '$23.00',
+      nr: 23,
       pastNr: 45,
     },
     {
@@ -109,7 +109,7 @@ export class ProductComponent implements OnInit {
       id: 11,
       imgUrl: 'assets/images/menuImg5.png',
       text: 'Drink',
-      nr: '$23.00',
+      nr: 23,
       pastNr: 45,
     },
     {
